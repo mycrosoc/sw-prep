@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#A32638">
+<meta name="description" content="คอร์สติวสังคมสงเคราะห์ครบวงจร ทั้งสอบเข้าศึกษาต่อและสอบใบประกอบวิชาชีพ SWPC เนื้อหาแม่นตรง พร้อมโจทย์ฝึกทำและเฉลยละเอียด">
+<title>SW/PREP — บัตรผ่านสู่เส้นทางนักสังคมสงเคราะห์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1B1A;
+    --paper:#F2EAD8;
+    --paper-white:#FBF8F1;
+    --seal:#A32638;
+    --seal-dark:#7C1B29;
+    --ledger:#2C4258;
+    --brass:#B8933F;
+    --line:#D8CFB8;
+    --green:#2E6B3E;
+    --max:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Sarabun',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:'Chakra Petch',sans-serif;}
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  section{scroll-margin-top:84px;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper-white);
+    padding:7px 14px;border-radius:999px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'●';color:var(--seal);font-size:.6rem;}
+  h2.section-title{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:600;margin-bottom:12px;}
+  p.section-sub{color:#514E48;max-width:560px;font-size:1rem;}
+  :focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;}
+  ::selection{background:var(--seal);color:var(--paper-white);}
+
+  .btn-primary,.btn-secondary{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-family:'Sarabun',sans-serif;font-weight:600;font-size:.98rem;
+    padding:14px 30px;border-radius:9px;text-decoration:none;cursor:pointer;
+    border:2px solid transparent;transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--seal);color:var(--paper-white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(163,38,56,.55);}
+  .btn-secondary{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-secondary:hover{transform:translateY(-2px);background:var(--ink);color:var(--paper-white);}
+  .btn-small{padding:10px 20px;font-size:.88rem;}
+
+  /* ---------- NAV ---------- */
+  .nav{position:sticky;top:0;z-index:200;background:rgba(242,234,216,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:.02em;text-decoration:none;}
+  .brand span{color:var(--seal);}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+  .nav-links a{text-decoration:none;font-weight:500;font-size:.95rem;}
+  .nav-links a:hover{color:var(--seal);}
+  .nav-cta{background:var(--ink);color:var(--paper-white)!important;padding:9px 18px;border-radius:999px;font-size:.88rem!important;}
+  .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .nav-toggle span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.25s;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+
+  @media(max-width:820px){
+    .nav-toggle{display:flex;}
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;
+      background:var(--paper-white);border-bottom:1px solid var(--line);
+      padding:8px 24px 20px;gap:4px;display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:12px 4px;border-bottom:1px solid var(--line);}
+    .nav-cta{text-align:center;margin-top:8px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 90px;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;}
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:600;line-height:1.22;margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--seal);}
+  .hero p.lede{font-size:1.08rem;color:#4B4841;max-width:520px;margin-bottom:32px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .hero-ticket{display:flex;justify-content:center;}
+  .ticket-card{
+    position:relative;width:100%;max-width:340px;background:var(--paper-white);
+    border-radius:18px;box-shadow:0 30px 60px -20px rgba(28,27,26,.35);
+    transform:rotate(-4deg);padding:26px 26px 0;
+    animation:cardIn .7s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes cardIn{0%{opacity:0;transform:rotate(-4deg) translateY(30px);}100%{opacity:1;transform:rotate(-4deg) translateY(0);}}
+  .ticket-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;}
+  .ticket-top .brand{font-size:1.05rem;}
+  .ticket-tag{font-family:'Space Mono';font-size:.66rem;letter-spacing:.1em;border:1.5px solid var(--ink);padding:3px 9px;border-radius:5px;}
+  .ticket-field{font-size:.86rem;margin-bottom:13px;display:flex;flex-direction:column;gap:2px;}
+  .ticket-field span{font-family:'Space Mono';font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:#8A8579;}
+  .perf-line{position:relative;height:0;border-top:2px dashed var(--line);margin:22px -26px 0;}
+  .perf-line::before,.perf-line::after{content:'';position:absolute;top:-9px;width:18px;height:18px;background:var(--paper);border-radius:50%;}
+  .perf-line::before{left:-9px;}
+  .perf-line::after{right:-9px;}
+  .ticket-stub{display:flex;justify-content:space-between;align-items:center;padding:18px 26px 22px;}
+  .stub-code{font-family:'Space Mono';font-size:.72rem;color:#8A8579;letter-spacing:.05em;}
+  .stub-seal{
+    width:58px;height:58px;border:3px double var(--seal);border-radius:50%;color:var(--seal);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-family:'Space Mono';font-size:.56rem;font-weight:700;line-height:1.15;letter-spacing:.03em;
+    transform:rotate(-13deg);opacity:0;
+    animation:stampIn .5s ease-out .9s both;
+  }
+  @keyframes stampIn{0%{transform:scale(2.4) rotate(-13deg);opacity:0;}55%{transform:scale(.92) rotate(-13deg);opacity:.9;}100%{transform:scale(1) rotate(-13deg);opacity:.88;}}
+
+  @media(prefers-reduced-motion:reduce){
+    .ticket-card,.stub-seal,.reveal{animation:none!important;opacity:1!important;transform:none!important;}
+  }
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;text-align:center;}
+    .hero p.lede{margin-left:auto;margin-right:auto;}
+    .hero-actions{justify-content:center;}
+    .ticket-card{transform:rotate(-2deg);margin-top:12px;}
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+
+  /* ---------- FEATURES ---------- */
+  .features{padding:70px 0 90px;}
+  .features-head{max-width:600px;margin-bottom:44px;}
+  .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .feature-card{background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:26px 22px;}
+  .stamp-mark{
+    width:34px;height:34px;border:2px solid var(--brass);border-radius:6px;
+    display:flex;align-items:center;justify-content:center;color:var(--brass);
+    margin-bottom:16px;transform:rotate(-6deg);font-weight:700;
+  }
+  .feature-card h3{font-size:1.04rem;font-weight:600;margin-bottom:8px;}
+  .feature-card p{font-size:.9rem;color:#5A564E;}
+  @media(max-width:900px){.features-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.features-grid{grid-template-columns:1fr;}}
+
+  /* ---------- COURSES / TICKETS ---------- */
+  .courses{padding:70px 0 96px;background:var(--paper-white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .courses-head{max-width:600px;margin-bottom:48px;}
+  .tracks-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .track-card{background:var(--paper);border-radius:16px;padding:0;overflow:hidden;border:1px solid var(--line);}
+  .track-card .t-head{padding:24px 26px 20px;display:flex;justify-content:space-between;align-items:flex-start;}
+  .track-card.t1 .t-head{border-top:6px solid var(--seal);}
+  .track-card.t2 .t-head{border-top:6px solid var(--ledger);}
+  .t-num{font-family:'Space Mono';font-size:.7rem;letter-spacing:.1em;color:#8A8579;margin-bottom:6px;display:block;}
+  .t-head h3{font-size:1.28rem;font-weight:600;}
+  .t-badge{font-family:'Space Mono';font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:6px;white-space:nowrap;}
+  .track-card.t1 .t-badge{background:rgba(163,38,56,.1);color:var(--seal);}
+  .track-card.t2 .t-badge{background:rgba(44,66,88,.1);color:var(--ledger);}
+  .track-card .t-desc{padding:0 26px 18px;font-size:.9rem;color:#5A564E;}
+  .t-perf{border-top:2px dashed var(--line);margin:0 26px;}
+  .t-list{list-style:none;padding:20px 26px 26px;}
+  .t-list li{position:relative;padding-left:24px;margin-bottom:11px;font-size:.9rem;}
+  .t-list li::before{content:'✓';position:absolute;left:0;top:0;color:var(--brass);font-weight:700;}
+  @media(max-width:820px){.tracks-grid{grid-template-columns:1fr;}}
+
+  /* ---------- QUIZ ---------- */
+  .quiz-section{padding:80px 0 96px;}
+  .quiz-head{max-width:600px;margin:0 auto 40px;text-align:center;}
+  .quiz-head .section-sub{margin:0 auto;}
+  .quiz-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:32px;flex-wrap:wrap;}
+  .quiz-tab{
+    font-family:'Space Mono';font-size:.78rem;letter-spacing:.03em;
+    background:var(--paper-white);border:1.5px solid var(--line);border-radius:999px;
+    padding:10px 20px;cursor:pointer;transition:.2s;
+  }
+  .quiz-tab.active{background:var(--ink);border-color:var(--ink);color:var(--paper-white);}
+  .quiz-card{max-width:640px;margin:0 auto;background:var(--paper-white);border:1px solid var(--line);border-radius:20px;padding:40px 34px;box-shadow:0 24px 50px -30px rgba(28,27,26,.4);}
+  .quiz-progress{font-family:'Space Mono';font-size:.78rem;color:var(--brass);letter-spacing:.06em;margin-bottom:14px;}
+  .quiz-question{font-size:1.12rem;font-weight:600;margin-bottom:26px;line-height:1.55;}
+  .bubble-list{display:flex;flex-direction:column;gap:12px;}
+  .bubble-option{
+    display:flex;align-items:center;gap:16px;width:100%;text-align:left;
+    background:none;border:1.5px solid var(--line);border-radius:12px;
+    padding:13px 18px;cursor:pointer;font-family:'Sarabun';font-size:.94rem;color:var(--ink);
+    transition:.15s;
+  }
+  .bubble-option:hover:not(.disabled){border-color:var(--brass);background:rgba(184,147,63,.06);}
+  .bubble-mark{
+    flex-shrink:0;width:32px;height:32px;border:2.5px solid var(--ink);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-family:'Space Mono';font-weight:700;font-size:.82rem;
+    transition:.15s;
+  }
+  .bubble-option.correct{border-color:var(--green);background:rgba(46,107,62,.08);}
+  .bubble-option.correct .bubble-mark{background:var(--green);border-color:var(--green);color:#fff;}
+  .bubble-option.incorrect{border-color:var(--seal);background:rgba(163,38,56,.07);}
+  .bubble-option.incorrect .bubble-mark{background:var(--seal);border-color:var(--seal);color:#fff;}
+  .bubble-option.disabled{cursor:default;}
+  .quiz-rationale{margin-top:22px;padding:16px 18px;background:var(--paper);border-radius:12px;border-left:4px solid var(--brass);font-size:.88rem;}
+  .quiz-rationale strong{display:block;margin-bottom:6px;font-family:'Chakra Petch';}
+  .quiz-nav{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
+  .quiz-complete{text-align:center;padding:10px 0;}
+  .quiz-score{font-family:'Chakra Petch';font-size:1.5rem;font-weight:600;margin-bottom:8px;}
+  .quiz-complete p{color:#5A564E;margin-bottom:24px;}
+  .quiz-complete .quiz-nav{justify-content:center;}
+
+  /* ---------- SCHEDULE / COUNTDOWN ---------- */
+  .schedule-section{padding:80px 0 96px;background:var(--ink);color:var(--paper-white);}
+  .schedule-inner{text-align:center;max-width:680px;margin:0 auto;}
+  .schedule-section .eyebrow{background:var(--paper-white);color:var(--ink);}
+  .schedule-section h2{font-size:clamp(1.5rem,3.2vw,2.1rem);margin-bottom:10px;}
+  .schedule-section p.section-sub{color:#C9C4B7;margin:0 auto 40px;}
+  .countdown{display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:44px;}
+  .count-block{padding:0 22px;text-align:center;}
+  .count-num{font-family:'Space Mono';font-weight:700;font-size:clamp(2rem,5vw,3.1rem);display:block;}
+  .count-label{font-family:'Space Mono';font-size:.68rem;letter-spacing:.1em;color:#9C978A;text-transform:uppercase;}
+  .count-div{width:2px;background:repeating-linear-gradient(to bottom,#4A473F 0,#4A473F 6px,transparent 6px,transparent 12px);}
+  .milestones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left;margin-top:8px;}
+  .milestone{background:rgba(251,248,241,.06);border:1px solid rgba(251,248,241,.14);border-radius:12px;padding:18px 18px;}
+  .milestone .m-tag{font-family:'Space Mono';font-size:.68rem;color:var(--brass);letter-spacing:.06em;display:block;margin-bottom:8px;}
+  .milestone p{font-size:.86rem;color:#D9D5C9;}
+  .schedule-note{font-size:.82rem;color:#9C978A;margin-top:28px;}
+  @media(max-width:640px){.milestones{grid-template-columns:1fr;}.count-block{padding:0 12px;}}
+
+  /* ---------- CONTACT ---------- */
+  .contact-section{padding:84px 0 100px;}
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:flex-start;}
+  .contact-copy h2{margin-bottom:14px;}
+  .contact-copy p{color:#5A564E;margin-bottom:26px;max-width:420px;}
+  .contact-points{list-style:none;}
+  .contact-points li{position:relative;padding-left:26px;margin-bottom:14px;font-size:.92rem;}
+  .contact-points li::before{content:'—';position:absolute;left:0;color:var(--seal);font-weight:700;}
+  .form-card{background:var(--paper-white);border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .embed-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+  .embed-head .stub-code{font-size:.8rem;}
+  .form-embed{border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper);}
+  .form-embed iframe{width:100%;height:640px;border:none;display:block;}
+  .embed-note{font-size:.78rem;color:#8A8579;margin-top:14px;text-align:center;}
+  @media(max-width:480px){.form-embed iframe{height:560px;}}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+
+  /* ---------- FOOTER ---------- */
+  .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
+  .site-footer .brand{display:inline-block;margin-bottom:8px;}
+  .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:0 auto;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">SW<span>/</span>PREP</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#courses">คอร์สเรียน</a></li>
+      <li><a href="#quiz">ลองทำโจทย์</a></li>
+      <li><a href="#schedule">นับถอยหลัง</a></li>
+      <li><a href="#contact" class="nav-cta">สมัครเรียน</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="เมนู"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">บัตรผ่านสู่เส้นทางนักสังคมสงเคราะห์</span>
+      <h1>จากห้องสอบเข้า<br>สู่ <em>ใบประกอบวิชาชีพ</em></h1>
+      <p class="lede">คอร์สติวสังคมสงเคราะห์ครบวงจร ครอบคลุมทั้งสนามสอบเข้าศึกษาต่อ (วิชาเฉพาะ) และสนามสอบใบประกอบวิชาชีพสังคมสงเคราะห์ (SWPC) จัดทำโดยนักศึกษาสังคมสงเคราะห์ที่ผ่านประสบการณ์ฝึกภาคปฏิบัติจริง เนื้อหาแม่นตรง เข้าใจง่าย พร้อมโจทย์ฝึกทำและเฉลยละเอียดทุกข้อ</p>
+      <div class="hero-actions">
+        <a href="#courses" class="btn-primary">ดูคอร์สเรียน</a>
+        <a href="#quiz" class="btn-secondary">ลองทำโจทย์ฟรี</a>
+      </div>
+    </div>
+    <div class="hero-ticket">
+      <div class="ticket-card">
+        <div class="ticket-top">
+          <span class="brand">SW<span style="color:var(--seal)">/</span>PREP</span>
+          <span class="ticket-tag">ADMIT ONE</span>
+        </div>
+        <div class="ticket-field"><span>ผู้ถือบัตร</span>นักสังคมสงเคราะห์อนาคต</div>
+        <div class="ticket-field"><span>เส้นทาง</span>สอบเข้า TU → ใบประกอบวิชาชีพ SWPC</div>
+        <div class="ticket-field"><span>สถานะ</span>กำลังเตรียมความพร้อม</div>
+        <div class="perf-line"></div>
+        <div class="ticket-stub">
+          <span class="stub-code mono">NO. 2569-002</span>
+          <div class="stub-seal">CERTIFIED<br>PREP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="features">
+  <div class="wrap">
+    <div class="features-head reveal">
+      <span class="eyebrow">จุดเด่น</span>
+      <h2 class="section-title">ทำไมต้องเตรียมตัวที่นี่</h2>
+      <p class="section-sub">ออกแบบมาให้ตรงจุด ใช้เวลาน้อยที่สุด ได้ความเข้าใจมากที่สุด</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="stamp-mark">✓</div><h3>เนื้อหาตรงหลักสูตร</h3><p>ครอบคลุมทฤษฎี กฎหมาย และจรรยาบรรณที่ออกสอบจริงทั้งสองสนามสอบ</p></div>
+      <div class="feature-card reveal"><div class="stamp-mark">✓</div><h3>โจทย์พร้อมเฉลยละเอียด</h3><p>ฝึกทำโจทย์สไตล์ข้อสอบจริง พร้อมคำอธิบายเหตุผลของทุกตัวเลือก</p></div>
+      <div class="feature-card reveal"><div class="stamp-mark">✓</div><h3>อ้างอิงกฎหมายล่าสุด</h3><p>อิงตามกฎหมายและระเบียบวิชาชีพฉบับปัจจุบัน เช่น พ.ร.บ.วิชาชีพสังคมสงเคราะห์</p></div>
+      <div class="feature-card reveal"><div class="stamp-mark">✓</div><h3>ทบทวนได้ทุกที่</h3><p>เข้าถึงเนื้อหาและฝึกทำโจทย์ได้ตลอด ไม่จำกัดเวลาเรียน</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <div class="wrap">
+    <div class="courses-head reveal">
+      <span class="eyebrow">คอร์สเรียน</span>
+      <h2 class="section-title">สองสนามสอบ สองเส้นทางเดียวกัน</h2>
+      <p class="section-sub">เลือกดูรายละเอียดแต่ละสนามสอบ หรือติวควบคู่กันไปทั้งสองสนาม</p>
+    </div>
+    <div class="tracks-grid">
+      <div class="track-card t1 reveal">
+        <div class="t-head">
+          <div><span class="t-num mono">TRACK 01</span><h3>สอบเข้าธรรมศาสตร์</h3></div>
+          <span class="t-badge">วิชาเฉพาะ</span>
+        </div>
+        <p class="t-desc">สำหรับผู้เตรียมสอบเข้าศึกษาต่อคณะสังคมสงเคราะห์ศาสตร์ ปูพื้นฐานแนวคิด หลักการ และวิธีการปฏิบัติงานตั้งแต่ต้น</p>
+        <div class="t-perf"></div>
+        <ul class="t-list">
+          <li>แนวคิดและปรัชญาสังคมสงเคราะห์</li>
+          <li>ประวัติศาสตร์สังคมสงเคราะห์สากลและไทย</li>
+          <li>วิธีปฏิบัติงาน: เฉพาะราย กลุ่มชน ชุมชน</li>
+          <li>หลักการและจรรยาบรรณเบื้องต้น</li>
+          <li>สวัสดิการสังคมและนโยบายสังคม</li>
+          <li>การวิเคราะห์สถานการณ์จำลอง</li>
+        </ul>
+      </div>
+      <div class="track-card t2 reveal">
+        <div class="t-head">
+          <div><span class="t-num mono">TRACK 02</span><h3>ใบประกอบวิชาชีพ</h3></div>
+          <span class="t-badge">SWPC</span>
+        </div>
+        <p class="t-desc">สำหรับผู้เตรียมสอบขึ้นทะเบียนและรับใบอนุญาตเป็นผู้ประกอบวิชาชีพสังคมสงเคราะห์รับอนุญาต</p>
+        <div class="t-perf"></div>
+        <ul class="t-list">
+          <li>พ.ร.บ.วิชาชีพสังคมสงเคราะห์ พ.ศ. 2556</li>
+          <li>จรรยาบรรณวิชาชีพสังคมสงเคราะห์</li>
+          <li>กระบวนการสังคมสงเคราะห์ (ประเมิน-ช่วยเหลือ-ประเมินผล)</li>
+          <li>กฎหมายที่เกี่ยวข้อง: คุ้มครองเด็ก ความรุนแรงในครอบครัว ยาเสพติด</li>
+          <li>การทำงานร่วมกับสหวิชาชีพ (MDT)</li>
+          <li>กลุ่มเปราะบางและการช่วยเหลือเฉพาะกลุ่ม</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quiz-section" id="quiz">
+  <div class="wrap">
+    <div class="quiz-head reveal">
+      <span class="eyebrow">ห้องสอบจำลอง</span>
+      <h2 class="section-title">กระดาษคำตอบจำลอง</h2>
+      <p class="section-sub">เลือกสนามสอบ แล้วลองฝึกทำโจทย์ตัวอย่าง พร้อมเฉลยละเอียดทันทีหลังตอบ</p>
+    </div>
+    <div class="quiz-tabs reveal">
+      <button class="quiz-tab active" data-track="track1" onclick="switchTrack('track1')">TRACK 01 · สอบเข้า TU</button>
+      <button class="quiz-tab" data-track="track2" onclick="switchTrack('track2')">TRACK 02 · SWPC</button>
+    </div>
+    <div class="quiz-card reveal" id="quizBody"></div>
+  </div>
+</section>
+
+<section class="schedule-section" id="schedule">
+  <div class="wrap schedule-inner">
+    <span class="eyebrow">ตารางสอบ</span>
+    <h2>นับถอยหลังสู่สนาม SWPC รอบ 2/2569</h2>
+    <p class="section-sub">วันสอบใบประกอบวิชาชีพสังคมสงเคราะห์ 26 กันยายน 2569</p>
+    <div class="countdown">
+      <div class="count-block"><span class="count-num" id="cdDays">00</span><span class="count-label">วัน</span></div>
+      <div class="count-div"></div>
+      <div class="count-block"><span class="count-num" id="cdHours">00</span><span class="count-label">ชม.</span></div>
+      <div class="count-div"></div>
+      <div class="count-block"><span class="count-num" id="cdMins">00</span><span class="count-label">นาที</span></div>
+      <div class="count-div"></div>
+      <div class="count-block"><span class="count-num" id="cdSecs">00</span><span class="count-label">วินาที</span></div>
+    </div>
+    <div class="milestones">
+      <div class="milestone"><span class="m-tag mono">ระยะที่ 1</span><p>ปูพื้นฐานทฤษฎี กฎหมาย และจรรยาบรรณให้แน่น</p></div>
+      <div class="milestone"><span class="m-tag mono">ระยะที่ 2</span><p>เจาะลึกกระบวนการสังคมสงเคราะห์และกลุ่มเปราะบาง</p></div>
+      <div class="milestone"><span class="m-tag mono">ระยะที่ 3</span><p>ติวเข้มโจทย์ข้อสอบจริงและจับเวลาทำแบบทดสอบ</p></div>
+    </div>
+    <p class="schedule-note">สำหรับสนามสอบเข้าธรรมศาสตร์ (วิชาเฉพาะ) โปรดติดตามวันสอบที่ประกาศอย่างเป็นทางการจากมหาวิทยาลัย</p>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-copy reveal">
+      <span class="eyebrow">สมัครเรียน</span>
+      <h2 class="section-title">ลงทะเบียนรับบัตรของคุณ</h2>
+      <p>กรอกแบบฟอร์มด้านขวา เพื่อรับข้อมูลคอร์สเรียน ตารางติว และสิทธิ์เข้าถึงเนื้อหาเต็มรูปแบบ</p>
+      <ul class="contact-points">
+        <li>เลือกได้ทั้งสอบเข้า TU สอบ SWPC หรือติวควบคู่ทั้งสองสนาม</li>
+        <li>ตอบกลับพร้อมรายละเอียดคอร์สและตารางเรียนภายใน 1–2 วัน</li>
+        <li>ไม่มีค่าใช้จ่ายในการลงทะเบียนเพื่อรับข้อมูล</li>
+      </ul>
+    </div>
+    <div class="form-card reveal">
+      <div class="embed-head">
+        <span class="stub-code mono">ใบสมัครออนไลน์</span>
+        <a href="https://forms.gle/UoxnrvwGUa5DFjkNA" target="_blank" rel="noopener" class="btn-secondary btn-small">เปิดในแท็บใหม่ ↗</a>
+      </div>
+      <div class="form-embed">
+        <iframe src="https://forms.gle/UoxnrvwGUa5DFjkNA" title="ใบสมัครเรียน SW/PREP" loading="lazy">กำลังโหลดฟอร์ม…</iframe>
+      </div>
+      <p class="embed-note">หากฟอร์มไม่แสดงผลในหน้านี้ ให้กดปุ่ม "เปิดในแท็บใหม่" ด้านบน</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="#" class="brand">SW<span style="color:var(--seal)">/</span>PREP</a>
+  <p>จัดทำโดยนักศึกษาสังคมสงเคราะห์ เพื่อใช้เป็นแนวทางเตรียมความพร้อมในการสอบ ไม่ใช่เอกสารทางการจากมหาวิทยาลัยธรรมศาสตร์หรือสภาวิชาชีพสังคมสงเคราะห์</p>
+</footer>
+
+<script>
+  // ---------- NAV ----------
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('open');
+  }));
+
+  // ---------- REVEAL ON SCROLL ----------
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ---------- COUNTDOWN ----------
+  function updateCountdown(){
+    const examDate = new Date('2026-09-26T09:00:00+07:00');
+    const diff = examDate - new Date();
+    const d = document.getElementById('cdDays'), h = document.getElementById('cdHours'),
+          m = document.getElementById('cdMins'), s = document.getElementById('cdSecs');
+    if (diff <= 0){ d.textContent='00'; h.textContent='00'; m.textContent='00'; s.textContent='00'; return; }
+    const days = Math.floor(diff/86400000);
+    const hours = Math.floor((diff%86400000)/3600000);
+    const mins = Math.floor((diff%3600000)/60000);
+    const secs = Math.floor((diff%60000)/1000);
+    d.textContent = String(days).padStart(2,'0');
+    h.textContent = String(hours).padStart(2,'0');
+    m.textContent = String(mins).padStart(2,'0');
+    s.textContent = String(secs).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ---------- QUIZ ----------
+  const quizData = {
+    track1: [
+      { q:'บุคคลใดได้รับการยกย่องว่าเป็นผู้บุกเบิกแนวคิด "สังคมสงเคราะห์เฉพาะราย" (Social Casework)?',
+        options:['เจน แอดดัมส์ (Jane Addams)','แมรี ริชมอนด์ (Mary Richmond)','ซิกมันด์ ฟรอยด์ (Sigmund Freud)','เอมิล เดอร์ไคม์ (Émile Durkheim)'],
+        correct:1,
+        rationale:'แมรี ริชมอนด์ ได้รับการยกย่องเป็น "มารดาแห่งสังคมสงเคราะห์เฉพาะราย" จากการวางรากฐานวิธีการทำงานเป็นรายบุคคลอย่างเป็นระบบ ส่วนเจน แอดดัมส์เป็นผู้บุกเบิกแนวคิด Settlement House และงานชุมชน' },
+      { q:'วิธีการปฏิบัติงานสังคมสงเคราะห์แบบดั้งเดิม (Traditional Methods) แบ่งออกเป็น 3 วิธีหลัก คือข้อใด?',
+        options:['จิตบำบัด การให้คำปรึกษา และการฟื้นฟู','สังคมสงเคราะห์เฉพาะราย สังคมสงเคราะห์กลุ่มชน และการจัดระเบียบชุมชน','การวิจัย การบริหาร และการกำหนดนโยบาย','การป้องกัน การบำบัด และการพัฒนา'],
+        correct:1,
+        rationale:'3 วิธีการดั้งเดิม ได้แก่ Casework, Group Work และ Community Organization ซึ่งเป็นรากฐานก่อนพัฒนาสู่แนวคิด Generalist Practice ในเวลาต่อมา' },
+      { q:'หลักการ "Client Self-Determination" ตามแนวคิดของ Biestek หมายถึงข้อใด?',
+        options:['นักสังคมสงเคราะห์เป็นผู้ตัดสินใจแทนผู้รับบริการเพื่อความรวดเร็ว','ผู้รับบริการมีสิทธิและเสรีภาพในการตัดสินใจเลือกแนวทางแก้ไขปัญหาของตนเอง','การให้ผู้รับบริการปฏิบัติตามกฎระเบียบขององค์กรอย่างเคร่งครัด','การกำหนดเป้าหมายการช่วยเหลือโดยไม่ต้องปรึกษาผู้รับบริการ'],
+        correct:1,
+        rationale:'เป็น 1 ใน 7 หลักการสัมพันธภาพของ Biestek ที่เน้นสิทธิของผู้รับบริการในการตัดสินใจด้วยตนเอง นักสังคมสงเคราะห์มีบทบาทสนับสนุนข้อมูลและทางเลือก ไม่ใช่ตัดสินใจแทน' }
+    ],
+    track2: [
+      { q:'พระราชบัญญัติวิชาชีพสังคมสงเคราะห์ พ.ศ. 2556 มีวัตถุประสงค์หลักเพื่อสิ่งใด?',
+        options:['กำหนดอัตราค่าจ้างของนักสังคมสงเคราะห์ในหน่วยงานรัฐ','จัดตั้งกลไกควบคุมมาตรฐานวิชาชีพและออกใบอนุญาตประกอบวิชาชีพสังคมสงเคราะห์','จัดสรรงบประมาณสวัสดิการสังคมให้แก่ประชาชน','กำหนดหลักสูตรการเรียนการสอนของคณะสังคมสงเคราะห์ศาสตร์'],
+        correct:1,
+        rationale:'กฎหมายฉบับนี้จัดตั้งสภาวิชาชีพสังคมสงเคราะห์ ทำหน้าที่ควบคุมมาตรฐาน จรรยาบรรณ และออกใบอนุญาตให้ผู้ประกอบวิชาชีพสังคมสงเคราะห์รับอนุญาต' },
+      { q:'ข้อใดสอดคล้องกับจรรยาบรรณวิชาชีพมากที่สุด เมื่อนักสังคมสงเคราะห์ได้รับข้อมูลส่วนตัวที่ละเอียดอ่อนจากผู้รับบริการ?',
+        options:['นำไปเล่าให้เพื่อนร่วมงานฟังเพื่อขอความเห็น โดยไม่ระบุชื่อ','รักษาความลับของข้อมูล เว้นแต่มีเหตุจำเป็นตามกฎหมายหรือเพื่อความปลอดภัยของผู้รับบริการ','เก็บไว้เป็นความลับส่วนตัวโดยไม่บันทึกในแฟ้มเคสเลย','เปิดเผยได้หากผู้บังคับบัญชาร้องขอโดยไม่มีเหตุผลประกอบ'],
+        correct:1,
+        rationale:'การรักษาความลับ (Confidentiality) เป็นหลักจรรยาบรรณสำคัญ แต่มีข้อยกเว้นเมื่อจำเป็นตามกฎหมายหรือเพื่อป้องกันอันตรายร้ายแรง ซึ่งต้องบันทึกและดำเนินการอย่างเหมาะสม' },
+      { q:'"กลุ่มเปราะบาง" (Vulnerable Groups) ในบริบทงานสังคมสงเคราะห์ไทย โดยทั่วไปหมายถึงกลุ่มใด?',
+        options:['เฉพาะกลุ่มผู้มีรายได้น้อยเท่านั้น','กลุ่มที่มีความเสี่ยงสูงต่อการถูกละเมิดสิทธิหรือเข้าไม่ถึงสวัสดิการ เช่น เด็ก ผู้สูงอายุ คนพิการ และผู้ประสบความรุนแรง','เฉพาะผู้ป่วยที่รักษาตัวในโรงพยาบาลเท่านั้น','กลุ่มข้าราชการที่รอเกษียณอายุ'],
+        correct:1,
+        rationale:'กลุ่มเปราะบางครอบคลุมบุคคลที่มีข้อจำกัดด้านร่างกาย เศรษฐกิจ สังคม หรือสถานการณ์ ทำให้เสี่ยงต่อการถูกละเมิดสิทธิหรือเข้าไม่ถึงบริการ ครอบคลุมกลุ่มหลากหลาย ไม่จำกัดเฉพาะมิติใดมิติหนึ่ง' }
+    ]
+  };
+
+  let quizState = { track:'track1', index:0, answered:false, correctCount:0 };
+  const letters = ['ก','ข','ค','ง'];
+
+  function switchTrack(track){
+    quizState = { track, index:0, answered:false, correctCount:0 };
+    document.querySelectorAll('.quiz-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.track === track));
+    renderQuizQuestion();
+  }
+
+  function renderQuizQuestion(){
+    const list = quizData[quizState.track];
+    const container = document.getElementById('quizBody');
+    if (quizState.index >= list.length){
+      container.innerHTML = `
+        <div class="quiz-complete">
+          <p class="quiz-score">คุณตอบถูก ${quizState.correctCount} จาก ${list.length} ข้อ</p>
+          <p>ลองอีกครั้งเพื่อทบทวน หรือลงทะเบียนดูคอร์สเต็มรูปแบบ</p>
+          <div class="quiz-nav">
+            <button class="btn-secondary btn-small" onclick="switchTrack('${quizState.track}')">ทำอีกครั้ง</button>
+            <a href="#contact" class="btn-primary btn-small">ลงทะเบียนติวเต็มรูปแบบ</a>
+          </div>
+        </div>`;
+      return;
+    }
+    const q = list[quizState.index];
+    container.innerHTML = `
+      <div class="quiz-progress mono">ข้อ ${quizState.index+1} / ${list.length}</div>
+      <p class="quiz-question">${q.q}</p>
+      <div class="bubble-list">
+        ${q.options.map((opt,i) => `
+          <button class="bubble-option" data-i="${i}" onclick="selectAnswer(${i})">
+            <span class="bubble-mark">${letters[i]}</span><span>${opt}</span>
+          </button>`).join('')}
+      </div>
+      <div class="quiz-rationale" id="quizRationale" style="display:none;"></div>
+      <div class="quiz-nav">
+        <button class="btn-secondary btn-small" id="quizNextBtn" style="display:none;" onclick="nextQuizQuestion()">ข้อถัดไป →</button>
+      </div>`;
+  }
+
+  function selectAnswer(i){
+    if (quizState.answered) return;
+    quizState.answered = true;
+    const q = quizData[quizState.track][quizState.index];
+    document.querySelectorAll('.bubble-option').forEach((btn, idx) => {
+      btn.classList.add('disabled');
+      if (idx === q.correct) btn.classList.add('correct');
+      else if (idx === i) btn.classList.add('incorrect');
+    });
+    if (i === q.correct) quizState.correctCount++;
+    const rationaleEl = document.getElementById('quizRationale');
+    rationaleEl.style.display = 'block';
+    rationaleEl.innerHTML = `<strong>${i===q.correct ? 'ถูกต้อง ✓' : 'ยังไม่ถูก ✕'}</strong><span>${q.rationale}</span>`;
+    document.getElementById('quizNextBtn').style.display = 'inline-flex';
+  }
+
+  function nextQuizQuestion(){
+    quizState.index++;
+    quizState.answered = false;
+    renderQuizQuestion();
+  }
+
+  renderQuizQuestion();
+</script>
+</body>
+</html>
