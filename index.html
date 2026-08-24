@@ -256,6 +256,22 @@
 
   /* ---------- CONTACT ---------- */
   .contact-section{padding:84px 0 100px;}
+
+  /* ---------- REVIEWS (swipeable) ---------- */
+  .reviews-section{padding:0 0 90px;}
+  .reviews-head{max-width:600px;margin-bottom:28px;}
+  .review-scroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 24px 16px;margin:0 -24px;}
+  .review-scroll::-webkit-scrollbar{display:none;}
+  .review-card{flex:0 0 auto;width:200px;scroll-snap-align:start;background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;}
+  .review-badge{display:inline-block;font-family:'Space Mono';font-size:.6rem;letter-spacing:.04em;padding:4px 10px;border-radius:999px;margin-bottom:14px;white-space:nowrap;}
+  .review-badge.rank1{background:var(--seal);color:var(--paper-white);}
+  .review-badge.top{background:rgba(184,147,63,.15);color:var(--brass);border:1px solid var(--brass);}
+  .review-name{font-weight:600;font-size:.96rem;margin-bottom:8px;}
+  .review-score{font-family:'Chakra Petch';font-weight:700;font-size:1.5rem;color:var(--ink);}
+  .review-score span{font-family:'Sarabun';font-weight:400;font-size:.68rem;color:#8A8579;}
+  .review-year{font-family:'Space Mono';font-size:.68rem;color:#8A8579;margin-top:4px;}
+  .review-hint{font-family:'Space Mono';font-size:.72rem;color:#8A8579;text-align:right;padding-right:24px;}
+  @media(min-width:640px){.review-hint{display:none;}}
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:flex-start;}
   .contact-copy h2{margin-bottom:14px;}
   .contact-copy p{color:#5A564E;margin-bottom:26px;max-width:420px;}
@@ -353,8 +369,8 @@
       <div class="teaser-badge mono">KB</div>
       <div class="teaser-info">
         <h3>วอลส์ กีรติ บัวแสน (Keerati Buasan)</h3>
-        <p class="teaser-role">นักศึกษาสังคมสงเคราะห์ ธรรมศาสตร์ · ผู้ก่อตั้ง MYCROSOC</p>
-        <p class="teaser-hook">ที่ 1 ประเทศ สนามสอบเข้า TU 2 ปีซ้อน · สอนมา 4 ปี พาน้องติดกว่า 200 คน</p>
+        <p class="teaser-role">นักศึกษาสังคมสงเคราะห์ มหาวิทยาลัยธรรมศาสตร์ · ผู้ก่อตั้ง MYCROSOC</p>
+        <p class="teaser-hook">ติวสอบวิชาเฉพาะ มธ. ติดอันดับ 1 ของประเทศ 2 ปีซ้อน! ประสบการณ์มากกว่า 4 ปี พาน้องติดกว่า 200 คน</p>
       </div>
       <span class="teaser-arrow">ดูประวัติเต็ม →</span>
     </a>
@@ -405,6 +421,42 @@
       </div>
     </div>
   </div>
+</section>
+
+<section class="reviews-section">
+  <div class="wrap">
+    <div class="reviews-head reveal">
+      <span class="eyebrow">รีวิวจากน้องๆ</span>
+      <h2 class="section-title">รีวิวจากเพื่อนๆ ที่ร่วมเรียนพิเศษกับ SW/PREP</h2>
+    </div>
+  </div>
+  <div class="review-scroll">
+    <div class="review-card reveal">
+      <span class="review-badge rank1">ที่ 1 ประเทศ</span>
+      <p class="review-name">น้องดรีม</p>
+      <p class="review-score">87.17<span> คะแนน</span></p>
+      <p class="review-year mono">ปีการศึกษา 2569</p>
+    </div>
+    <div class="review-card reveal">
+      <span class="review-badge top">TOP ประเทศ</span>
+      <p class="review-name">น้องวาวา</p>
+      <p class="review-score">78.97<span> คะแนน</span></p>
+      <p class="review-year mono">ปีการศึกษา 2569</p>
+    </div>
+    <div class="review-card reveal">
+      <span class="review-badge rank1">ที่ 1 ประเทศ</span>
+      <p class="review-name">น้องแพท</p>
+      <p class="review-score">79.75<span> คะแนน</span></p>
+      <p class="review-year mono">ปีการศึกษา 2568</p>
+    </div>
+    <div class="review-card reveal">
+      <span class="review-badge top">TOP ประเทศ</span>
+      <p class="review-name">น้องแตงอ่อน</p>
+      <p class="review-score">75.29<span> คะแนน</span></p>
+      <p class="review-year mono">ปีการศึกษา 2568</p>
+    </div>
+  </div>
+  <p class="review-hint">← ปัดดูเพิ่มเติม</p>
 </section>
 
 <section class="quiz-section" id="quiz">
@@ -480,7 +532,6 @@
       <div class="form-embed">
         <iframe src="https://forms.gle/UoxnrvwGUa5DFjkNA" title="ใบสมัครเรียน SW/PREP" loading="lazy">กำลังโหลดฟอร์ม…</iframe>
       </div>
-      <p class="embed-note">หากฟอร์มไม่แสดงผลในหน้านี้ ให้กดปุ่ม "เปิดในแท็บใหม่" ด้านบน</p>
     </div>
   </div>
 </section>
