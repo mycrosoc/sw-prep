@@ -120,6 +120,20 @@
   .ci-date{font-family:'Space Mono';font-size:.7rem;color:#8A8579;white-space:nowrap;}
   .ci-desc{font-size:.9rem;color:#5A564E;}
   .sub-label{font-weight:600;margin-bottom:10px;font-size:.94rem;}
+
+  /* ABOUT TIMELINE — icon markers on a connecting line */
+  .about-intro{font-size:.92rem;color:#5A564E;margin-bottom:26px;}
+  .about-intro strong{display:block;color:var(--ink);font-size:1rem;margin-bottom:6px;}
+  .timeline{position:relative;padding-left:56px;}
+  .timeline::before{content:'';position:absolute;left:19px;top:6px;bottom:6px;width:2px;background:var(--line);}
+  .tl-item{position:relative;margin-bottom:26px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-icon{position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:var(--seal);color:var(--paper-white);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .tl-icon svg{width:20px;height:20px;}
+  .tl-content p{font-size:.92rem;padding-top:8px;}
+  .tl-sublist{list-style:none;margin-top:12px;}
+  .tl-sublist li{display:flex;gap:10px;margin-bottom:10px;font-size:.88rem;color:#5A564E;align-items:flex-start;}
+  .tl-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--brass);color:#fff;font-family:'Space Mono';font-size:.64rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
   .cred-list{list-style:none;}
   .cred-list li{position:relative;padding-left:22px;margin-bottom:9px;font-size:.9rem;color:#5A564E;}
   .cred-list li::before{content:'✓';position:absolute;left:0;top:0;color:var(--brass);font-weight:700;}
@@ -137,22 +151,23 @@
   .score-chip .sc-num{font-family:'Chakra Petch';font-weight:700;font-size:1.35rem;color:var(--seal);}
 
   /* SUBJECTS — reuses homepage track-card pattern exactly */
-  .subject-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .subject-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
   .track-card{background:var(--paper);border-radius:16px;padding:0;overflow:hidden;border:1px solid var(--line);}
   .track-card .t-head{padding:22px 24px 18px;border-top:6px solid var(--seal);}
   .track-card.s2 .t-head{border-top:6px solid var(--ledger);}
-  .t-head h3{font-size:1.1rem;font-weight:600;}
+  .track-card.s3 .t-head{border-top:6px solid var(--brass);}
+  .t-head h3{font-size:1.05rem;font-weight:600;}
   .t-desc{padding:0 24px 22px;font-size:.88rem;color:#5A564E;}
-  @media(max-width:640px){.subject-grid{grid-template-columns:1fr;}}
+  @media(max-width:900px){.subject-grid{grid-template-columns:1fr;}}
 
   /* WHY CARDS — reuses homepage stamp-mark exactly */
   .why-section{padding:20px 0 12px;}
-  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
   .why-card{background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:26px 22px;}
   .stamp-mark{width:34px;height:34px;border:2px solid var(--brass);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--brass);margin-bottom:16px;transform:rotate(-6deg);font-weight:700;}
   .why-card h3{font-size:1.04rem;font-weight:600;margin-bottom:8px;}
   .why-card p{font-size:.9rem;color:#5A564E;}
-  @media(max-width:640px){.why-grid{grid-template-columns:1fr;}}
+  @media(max-width:900px){.why-grid{grid-template-columns:1fr;}}
 
   .note-line{font-size:.86rem;color:#6B6759;text-align:center;max-width:560px;margin:36px auto 0;}
 
@@ -233,40 +248,32 @@
 
     <div class="cred-block reveal">
       <h2>เกี่ยวกับฉัน</h2>
-      <p class="ci-desc">ปริญญาตรี สังคมสงเคราะห์ศาสตรบัณฑิต มหาวิทยาลัยธรรมศาสตร์ วิชาโทสังคมสงเคราะห์สุขภาพและการแพทย์ · มัธยมศึกษาโรงเรียนโยธินบูรณะ สายการเรียนภาษาอังกฤษ-สังคมศึกษา · ผู้ก่อตั้งกิจกรรมจิตสังคม คณะสังคมสงเคราะห์ศาสตร์ มหาวิทยาลัยธรรมศาสตร์</p>
-      <p class="sub-label" style="margin-top:18px;">งานวิชาการและบทความ</p>
-      <ul class="pub-list">
-        <li><span class="pub-title">พลวัตอาหารจานด่วน: พลวัตของสังคมจากอาหารขยะสู่การเป็นอาหารเพื่อสุขภาพ</span></li>
-        <li><span class="pub-title">แนวทางบูรณาการสุขภาวะองค์รวมในสถานการณ์ภัยพิบัติและภาวะฉุกเฉิน</span></li>
-        <li><span class="pub-title">บทบาทของนักสังคมสงเคราะห์สัตวแพทย์ต่อการสนับสนุนผู้รับบริการและสถานพยาบาลสัตว์</span></li>
-        <li><span class="pub-title">การบูรณาการความรู้ด้านพันธุศาสตร์เข้าสู่การประเมินทางจิตสังคมในงานสังคมสงเคราะห์ทางการแพทย์</span></li>
-        <li><span class="pub-title">พลวัตความเปราะบางที่ซ่อนเร้นในกลุ่มแรงงาน: ช่องว่างระหว่างระบบสวัสดิการสังคมกับต้นทุนชีวิตในเมือง</span></li>
-      </ul>
-    </div>
-
-    <div class="reveal">
-      <p class="sub-label" style="margin-bottom:14px;">วิชาที่เปิดสอน</p>
-      <div class="subject-grid">
-        <div class="track-card s1">
-          <div class="t-head"><h3>วิชาสังคมสงเคราะห์</h3></div>
-          <p class="t-desc">สอนละเอียดครบถ้วน ครอบคลุมทุกเนื้อหาที่ออกสอบ โดยนักศึกษาสังคมสงเคราะห์ตัวจริง ประสบการณ์สอน 4 ปี พาน้องติดกว่า 200 คน</p>
+      <p class="about-intro">
+        ปริญญาตรี: สังคมสงเคราะห์ศาสตรบัณฑิต มหาวิทยาลัยธรรมศาสตร์<br>
+        สาขาวิชาโท: สังคมสงเคราะห์สุขภาพและการแพทย์
+      </p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div class="tl-content">
+            <p>นำเสนอองค์ความรู้บทความวิชาการสังคมสงเคราะห์และสวัสดิการสังคม เช่น</p>
+            <ul class="tl-sublist">
+              <li><span class="tl-num mono">1</span><span>พลวัตอาหารจานด่วน: พลวัตของสังคมจากอาหารขยะสู่การเป็นอาหารเพื่อสุขภาพ</span></li>
+              <li><span class="tl-num mono">2</span><span>แนวทางบูรณาการสุขภาวะองค์รวมในสถานการณ์ภัยพิบัติและภาวะฉุกเฉิน</span></li>
+              <li><span class="tl-num mono">3</span><span>บทบาทของนักสังคมสงเคราะห์สัตวแพทย์ต่อการสนับสนุนผู้รับบริการและสถานพยาบาลสัตว์</span></li>
+              <li><span class="tl-num mono">4</span><span>การบูรณาการความรู้ด้านอีพิจีเนติกส์เข้าสู่การประเมินทางจิตสังคมในงานสังคมสงเคราะห์ทางการแพทย์</span></li>
+              <li><span class="tl-num mono">5</span><span>พลวัตความเปราะบางที่ซ่อนเร้นในกลุ่มแรงงาน: ช่องว่างระหว่างระบบสวัสดิการสังคมกับต้นทุนชีวิตในเมือง</span></li>
+            </ul>
+          </div>
         </div>
-        <div class="track-card s2">
-          <div class="t-head"><h3>วิชาสังคมศึกษา</h3></div>
-          <p class="t-desc">เนื้อหาแน่นจากนักศึกษาตัวจริง ตรงจากสายสังคมตัว Top พร้อมพิชิตสนามสอบด้วยเทคนิคเฉพาะ จำง่าย ใช้ได้จริง</p>
+        <div class="tl-item">
+          <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></div>
+          <div class="tl-content"><p>ผู้ก่อตั้งกิจกรรมจิตสังคม คณะสังคมสงเคราะห์ศาสตร์ มหาวิทยาลัยธรรมศาสตร์</p></div>
         </div>
-      </div>
-    </div>
-
-    <div class="cred-block reveal" style="margin-top:24px;">
-      <h2>ผลคะแนนสอบ</h2>
-      <div class="score-row">
-        <div class="score-chip"><div class="sc-name">TOEIC</div><div class="sc-num">695</div></div>
-        <div class="score-chip"><div class="sc-name">IELTS</div><div class="sc-num">6.0</div></div>
-        <div class="score-chip"><div class="sc-name">TGAT</div><div class="sc-num">80.13</div></div>
-        <div class="score-chip"><div class="sc-name">A-Level Eng</div><div class="sc-num">72.00</div></div>
-        <div class="score-chip"><div class="sc-name">A-Level สังคม</div><div class="sc-num">78.00</div></div>
-        <div class="score-chip"><div class="sc-name">A-Level ไทย</div><div class="sc-num">80.00</div></div>
+        <div class="tl-item">
+          <div class="tl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+          <div class="tl-content"><p>ระดับมัธยมศึกษา: โรงเรียนโยธินบูรณะ สายการเรียนภาษาอังกฤษ-สังคมศึกษา</p></div>
+        </div>
       </div>
     </div>
 
@@ -299,16 +306,47 @@
       </div>
     </div>
 
+    <div class="cred-block reveal">
+      <h2>ผลคะแนนสอบ</h2>
+      <div class="score-row">
+        <div class="score-chip"><div class="sc-name">TOEIC</div><div class="sc-num">695</div></div>
+        <div class="score-chip"><div class="sc-name">IELTS</div><div class="sc-num">6.0</div></div>
+        <div class="score-chip"><div class="sc-name">TGAT</div><div class="sc-num">80.13</div></div>
+        <div class="score-chip"><div class="sc-name">A-Level Eng</div><div class="sc-num">72.00</div></div>
+        <div class="score-chip"><div class="sc-name">A-Level สังคม</div><div class="sc-num">78.00</div></div>
+        <div class="score-chip"><div class="sc-name">A-Level ไทย</div><div class="sc-num">80.00</div></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p class="sub-label" style="margin-bottom:14px;">วิชาที่เปิดสอน</p>
+      <div class="subject-grid">
+        <div class="track-card s1">
+          <div class="t-head"><h3>สังคมสงเคราะห์ — สอบเข้ามหาวิทยาลัย</h3></div>
+          <p class="t-desc">ติวเข้มวิชาเฉพาะสังคมสงเคราะห์สำหรับสอบเข้า TU ครอบคลุมทุกเนื้อหาที่ออกสอบ พาน้องติดกว่า 200 คน</p>
+        </div>
+        <div class="track-card s3">
+          <div class="t-head"><h3>สังคมสงเคราะห์ — ใบประกอบวิชาชีพ</h3></div>
+          <p class="t-desc">ติวเข้มเนื้อหาสอบใบประกอบวิชาชีพสังคมสงเคราะห์ (SWPC) ครอบคลุมจรรยาบรรณ กฎหมาย และกระบวนการปฏิบัติงาน</p>
+        </div>
+        <div class="track-card s2">
+          <div class="t-head"><h3>สังคมศึกษา</h3></div>
+          <p class="t-desc">เนื้อหาแน่นจากนักศึกษาตัวจริง ตรงจากสายสังคมตัว Top พร้อมพิชิตสนามสอบด้วยเทคนิคเฉพาะ จำง่าย ใช้ได้จริง</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <section class="why-section">
   <div class="wrapN">
     <div class="why-grid">
-      <div class="why-card reveal"><div class="stamp-mark">✓</div><h3>คะแนนอันดับ 1 ประเทศ</h3><p>สอบวิชาเฉพาะสังคมสงเคราะห์ มธ. ได้คะแนนสูงสุดของประเทศ 2 ปีซ้อน</p></div>
-      <div class="why-card reveal"><div class="stamp-mark">✓</div><h3>ผลลัพธ์ที่พิสูจน์ได้</h3><p>สอนมา 4 ปี พาน้องสอบติดกว่า 200 คน พร้อมประสบการณ์ตรงจากโรงพยาบาลจริง</p></div>
+      <div class="why-card reveal"><div class="stamp-mark">✓</div><h3>ติวจนสอบติดอันดับ 1 ประเทศ</h3><p>ติวนักเรียนจนสอบวิชาเฉพาะสังคมสงเคราะห์ มธ. ได้คะแนนสูงสุดของประเทศ ติดต่อกัน 2 ปีซ้อน</p></div>
+      <div class="why-card reveal"><div class="stamp-mark">✓</div><h3>ผลลัพธ์ที่พิสูจน์ได้</h3><p>สอนมา 4 ปี พาน้องสอบติดกว่า 200 คน จากหลักสูตรที่ปรับปรุงและพัฒนาอย่างต่อเนื่อง</p></div>
+      <div class="why-card reveal"><div class="stamp-mark">✓</div><h3>สอนจากผู้มีประสบการณ์จริง</h3><p>ตีพิมพ์บทความวิชาการด้านสังคมสงเคราะห์อย่างต่อเนื่อง นำองค์ความรู้ล่าสุดมาสอนให้เข้าใจง่าย</p></div>
     </div>
-    <p class="note-line">นอกเวลาเรียนและฝึกงาน วอลส์ยังทำคอนเทนต์สร้างสรรค์ผ่านช่องส่วนตัว และร่วมกิจกรรมชมรมอุปรากรจีนเชิงเสียดสีการเมืองที่ธรรมศาสตร์</p>
+    <p class="note-line">ทุกบทเรียนตั้งใจออกแบบมาจากประสบการณ์ตรงและความเข้าใจในสนามสอบจริง เพื่อให้น้องๆ ทุกคนไปถึงเป้าหมายได้เร็วที่สุด</p>
   </div>
 </section>
 
