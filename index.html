@@ -6,6 +6,13 @@
 <meta name="theme-color" content="#A32638">
 <meta name="description" content="คอร์สติวสังคมสงเคราะห์ครบวงจร ทั้งสอบเข้าศึกษาต่อและสอบใบประกอบวิชาชีพ SWPC เนื้อหาแม่นตรง พร้อมโจทย์ฝึกทำและเฉลยละเอียด">
 <title>SW/PREP — บัตรผ่านสู่เส้นทางนักสังคมสงเคราะห์</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C1B1A'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-weight='700' font-size='54' fill='%23A32638' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SW/PREP — บัตรผ่านสู่เส้นทางนักสังคมสงเคราะห์">
+<meta property="og:description" content="คอร์สติวสังคมสงเคราะห์ครบวงจร ทั้งสอบเข้าศึกษาต่อและสอบใบประกอบวิชาชีพ SWPC เนื้อหาแม่นตรง พร้อมโจทย์ฝึกทำและเฉลยละเอียด">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SW/PREP — บัตรผ่านสู่เส้นทางนักสังคมสงเคราะห์">
+<meta name="twitter:description" content="คอร์สติวสังคมสงเคราะห์ครบวงจร ทั้งสอบเข้าศึกษาต่อและสอบใบประกอบวิชาชีพ SWPC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -155,10 +162,23 @@
   @media(max-width:900px){.features-grid{grid-template-columns:1fr 1fr;}}
   @media(max-width:560px){.features-grid{grid-template-columns:1fr;}}
 
+  /* ---------- INSTRUCTOR TEASER ---------- */
+  .instructor-teaser{padding:0 0 90px;}
+  .teaser-head{max-width:600px;margin-bottom:32px;}
+  .teaser-card{display:flex;align-items:center;gap:24px;background:var(--paper-white);border:1px solid var(--line);border-radius:18px;padding:28px 30px;text-decoration:none;color:var(--ink);transition:.2s;box-shadow:0 4px 20px -14px rgba(28,27,26,.2);}
+  .teaser-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px -16px rgba(28,27,26,.3);border-color:var(--brass);}
+  .teaser-badge{flex-shrink:0;width:60px;height:60px;border-radius:50%;background:var(--ink);color:var(--paper-white);display:flex;align-items:center;justify-content:center;font-family:'Space Mono';font-weight:700;font-size:1.2rem;}
+  .teaser-info{flex:1;min-width:0;}
+  .teaser-info h3{font-size:1.1rem;font-weight:600;margin-bottom:4px;}
+  .teaser-role{font-size:.84rem;color:var(--seal);font-weight:600;margin-bottom:6px;}
+  .teaser-hook{font-size:.86rem;color:#5A564E;}
+  .teaser-arrow{flex-shrink:0;font-family:'Space Mono';font-size:.8rem;font-weight:700;white-space:nowrap;}
+  @media(max-width:640px){.teaser-card{flex-direction:column;align-items:flex-start;text-align:left;}.teaser-arrow{align-self:flex-end;}}
+
   /* ---------- COURSES / TICKETS ---------- */
   .courses{padding:70px 0 96px;background:var(--paper-white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .courses-head{max-width:600px;margin-bottom:48px;}
-  .tracks-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .tracks-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
   .track-card{background:var(--paper);border-radius:16px;padding:0;overflow:hidden;border:1px solid var(--line);}
   .track-card .t-head{padding:24px 26px 20px;display:flex;justify-content:space-between;align-items:flex-start;}
   .track-card.t1 .t-head{border-top:6px solid var(--seal);}
@@ -221,16 +241,17 @@
   .schedule-section .eyebrow{background:var(--paper-white);color:var(--ink);}
   .schedule-section h2{font-size:clamp(1.5rem,3.2vw,2.1rem);margin-bottom:10px;}
   .schedule-section p.section-sub{color:#C9C4B7;margin:0 auto 40px;}
-  .countdown{display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin-bottom:44px;}
+  .countdown{display:flex;justify-content:center;gap:0;flex-wrap:wrap;}
   .count-block{padding:0 22px;text-align:center;}
   .count-num{font-family:'Space Mono';font-weight:700;font-size:clamp(2rem,5vw,3.1rem);display:block;}
   .count-label{font-family:'Space Mono';font-size:.68rem;letter-spacing:.1em;color:#9C978A;text-transform:uppercase;}
   .count-div{width:2px;background:repeating-linear-gradient(to bottom,#4A473F 0,#4A473F 6px,transparent 6px,transparent 12px);}
-  .milestones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left;margin-top:8px;}
+  .schedule-divider{border-top:2px dashed rgba(251,248,241,.18);margin:52px auto;max-width:360px;}
+  .milestones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left;margin-top:52px;}
   .milestone{background:rgba(251,248,241,.06);border:1px solid rgba(251,248,241,.14);border-radius:12px;padding:18px 18px;}
   .milestone .m-tag{font-family:'Space Mono';font-size:.68rem;color:var(--brass);letter-spacing:.06em;display:block;margin-bottom:8px;}
   .milestone p{font-size:.86rem;color:#D9D5C9;}
-  .schedule-note{font-size:.82rem;color:#9C978A;margin-top:28px;}
+  .schedule-note{font-size:.78rem;color:#9C978A;margin-top:28px;}
   @media(max-width:640px){.milestones{grid-template-columns:1fr;}.count-block{padding:0 12px;}}
 
   /* ---------- CONTACT ---------- */
@@ -252,7 +273,11 @@
 
   /* ---------- FOOTER ---------- */
   .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
-  .site-footer .brand{display:inline-block;margin-bottom:8px;}
+  .site-footer .brand{display:inline-block;margin-bottom:16px;}
+  .footer-social{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:20px;}
+  .footer-social a{display:inline-flex;align-items:center;gap:7px;font-family:'Space Mono';font-size:.78rem;letter-spacing:.02em;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:2px;transition:.15s;}
+  .footer-social a:hover{color:var(--seal);border-color:var(--seal);}
+  .social-icon{width:16px;height:16px;flex-shrink:0;}
   .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:0 auto;}
 </style>
 </head>
@@ -263,6 +288,7 @@
     <a href="#" class="brand">SW<span>/</span>PREP</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#courses">คอร์สเรียน</a></li>
+      <li><a href="instructor.html">ผู้สอน</a></li>
       <li><a href="#quiz">ลองทำโจทย์</a></li>
       <li><a href="#schedule">นับถอยหลัง</a></li>
       <li><a href="#contact" class="nav-cta">สมัครเรียน</a></li>
@@ -317,6 +343,24 @@
   </div>
 </section>
 
+<section class="instructor-teaser">
+  <div class="wrap">
+    <div class="teaser-head reveal">
+      <span class="eyebrow">เกี่ยวกับผู้สอน</span>
+      <h2 class="section-title">ใครอยู่เบื้องหลัง SW/PREP</h2>
+    </div>
+    <a href="instructor.html" class="teaser-card reveal">
+      <div class="teaser-badge mono">KB</div>
+      <div class="teaser-info">
+        <h3>วอลส์ กีรติ บัวแสน (Keerati Buasan)</h3>
+        <p class="teaser-role">นักศึกษาสังคมสงเคราะห์ ธรรมศาสตร์ · ผู้ก่อตั้ง MYCROSOC</p>
+        <p class="teaser-hook">ที่ 1 ประเทศ สนามสอบเข้า TU 2 ปีซ้อน · สอนมา 4 ปี พาน้องติดกว่า 200 คน</p>
+      </div>
+      <span class="teaser-arrow">ดูประวัติเต็ม →</span>
+    </a>
+  </div>
+</section>
+
 <section class="courses" id="courses">
   <div class="wrap">
     <div class="courses-head reveal">
@@ -333,12 +377,14 @@
         <p class="t-desc">สำหรับผู้เตรียมสอบเข้าศึกษาต่อคณะสังคมสงเคราะห์ศาสตร์ ปูพื้นฐานแนวคิด หลักการ และวิธีการปฏิบัติงานตั้งแต่ต้น</p>
         <div class="t-perf"></div>
         <ul class="t-list">
-          <li>แนวคิดและปรัชญาสังคมสงเคราะห์</li>
-          <li>ประวัติศาสตร์สังคมสงเคราะห์สากลและไทย</li>
-          <li>วิธีปฏิบัติงาน: เฉพาะราย กลุ่มชน ชุมชน</li>
-          <li>หลักการและจรรยาบรรณเบื้องต้น</li>
-          <li>สวัสดิการสังคมและนโยบายสังคม</li>
-          <li>การวิเคราะห์สถานการณ์จำลอง</li>
+          <li>แนวทางเตรียมสอบเข้าและวิธีคำนวณคะแนน</li>
+          <li>ภาพรวมวิชาชีพและเส้นทางสายอาชีพหลังเรียนจบ</li>
+          <li>ความเป็นมา คุณค่า บทบาท และจรรยาบรรณวิชาชีพ</li>
+          <li>ทฤษฎีและกระบวนทัศน์ทางสังคมศาสตร์</li>
+          <li>หลักการ วิธีการ และกระบวนการปฏิบัติงาน</li>
+          <li>มิติศาสตร์ ศิลป์ และความเป็นวิชาชีพ</li>
+          <li>นโยบายและสวัสดิการสังคม</li>
+          <li>สิทธิมนุษยชน กฎหมาย และการวิเคราะห์สถานการณ์สังคมปัจจุบัน</li>
         </ul>
       </div>
       <div class="track-card t2 reveal">
@@ -349,12 +395,12 @@
         <p class="t-desc">สำหรับผู้เตรียมสอบขึ้นทะเบียนและรับใบอนุญาตเป็นผู้ประกอบวิชาชีพสังคมสงเคราะห์รับอนุญาต</p>
         <div class="t-perf"></div>
         <ul class="t-list">
-          <li>พ.ร.บ.วิชาชีพสังคมสงเคราะห์ พ.ศ. 2556</li>
-          <li>จรรยาบรรณวิชาชีพสังคมสงเคราะห์</li>
-          <li>กระบวนการสังคมสงเคราะห์ (ประเมิน-ช่วยเหลือ-ประเมินผล)</li>
-          <li>กฎหมายที่เกี่ยวข้อง: คุ้มครองเด็ก ความรุนแรงในครอบครัว ยาเสพติด</li>
-          <li>การทำงานร่วมกับสหวิชาชีพ (MDT)</li>
-          <li>กลุ่มเปราะบางและการช่วยเหลือเฉพาะกลุ่ม</li>
+          <li>แนวคิดทางสังคมศาสตร์และมนุษยศาสตร์</li>
+          <li>สถานการณ์ทางสังคมและปัญหาทางสังคม</li>
+          <li>ปรัชญาฐานคิดทางสังคมสงเคราะห์</li>
+          <li>จริยธรรมทางวิชาชีพสังคมสงเคราะห์</li>
+          <li>การเสริมพลังอำนาจทางสังคมสงเคราะห์</li>
+          <li>กฎหมายที่เกี่ยวข้องกับงานสังคมสงเคราะห์</li>
         </ul>
       </div>
     </div>
@@ -379,23 +425,38 @@
 <section class="schedule-section" id="schedule">
   <div class="wrap schedule-inner">
     <span class="eyebrow">ตารางสอบ</span>
+    <h2>นับถอยหลังสู่สนามสอบเข้า TU</h2>
+    <p class="section-sub">วิชาเฉพาะสังคมสงเคราะห์ · Admission 3 (TCAS70) 21 มีนาคม 2570</p>
+    <div class="countdown">
+      <div class="count-block"><span class="count-num" id="cd1Days">00</span><span class="count-label">วัน</span></div>
+      <div class="count-div"></div>
+      <div class="count-block"><span class="count-num" id="cd1Hours">00</span><span class="count-label">ชม.</span></div>
+      <div class="count-div"></div>
+      <div class="count-block"><span class="count-num" id="cd1Mins">00</span><span class="count-label">นาที</span></div>
+      <div class="count-div"></div>
+      <div class="count-block"><span class="count-num" id="cd1Secs">00</span><span class="count-label">วินาที</span></div>
+    </div>
+
+    <div class="schedule-divider"></div>
+
     <h2>นับถอยหลังสู่สนาม SWPC รอบ 2/2569</h2>
     <p class="section-sub">วันสอบใบประกอบวิชาชีพสังคมสงเคราะห์ 26 กันยายน 2569</p>
     <div class="countdown">
-      <div class="count-block"><span class="count-num" id="cdDays">00</span><span class="count-label">วัน</span></div>
+      <div class="count-block"><span class="count-num" id="cd2Days">00</span><span class="count-label">วัน</span></div>
       <div class="count-div"></div>
-      <div class="count-block"><span class="count-num" id="cdHours">00</span><span class="count-label">ชม.</span></div>
+      <div class="count-block"><span class="count-num" id="cd2Hours">00</span><span class="count-label">ชม.</span></div>
       <div class="count-div"></div>
-      <div class="count-block"><span class="count-num" id="cdMins">00</span><span class="count-label">นาที</span></div>
+      <div class="count-block"><span class="count-num" id="cd2Mins">00</span><span class="count-label">นาที</span></div>
       <div class="count-div"></div>
-      <div class="count-block"><span class="count-num" id="cdSecs">00</span><span class="count-label">วินาที</span></div>
+      <div class="count-block"><span class="count-num" id="cd2Secs">00</span><span class="count-label">วินาที</span></div>
     </div>
+
     <div class="milestones">
       <div class="milestone"><span class="m-tag mono">ระยะที่ 1</span><p>ปูพื้นฐานทฤษฎี กฎหมาย และจรรยาบรรณให้แน่น</p></div>
       <div class="milestone"><span class="m-tag mono">ระยะที่ 2</span><p>เจาะลึกกระบวนการสังคมสงเคราะห์และกลุ่มเปราะบาง</p></div>
       <div class="milestone"><span class="m-tag mono">ระยะที่ 3</span><p>ติวเข้มโจทย์ข้อสอบจริงและจับเวลาทำแบบทดสอบ</p></div>
     </div>
-    <p class="schedule-note">สำหรับสนามสอบเข้าธรรมศาสตร์ (วิชาเฉพาะ) โปรดติดตามวันสอบที่ประกาศอย่างเป็นทางการจากมหาวิทยาลัย</p>
+    <p class="schedule-note">วันสอบอ้างอิงจากประกาศล่าสุด โปรดตรวจสอบวันและเวลาอย่างเป็นทางการอีกครั้งจากประกาศ ทปอ. (TCAS) และสภาวิชาชีพสังคมสงเคราะห์ก่อนวันสอบจริง</p>
   </div>
 </section>
 
@@ -426,6 +487,12 @@
 
 <footer class="site-footer">
   <a href="#" class="brand">SW<span style="color:var(--seal)">/</span>PREP</a>
+  <div class="footer-social">
+    <a href="mailto:mycrosoc@gmail.com"><svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>mycrosoc@gmail.com</a>
+    <a href="https://instagram.com/mycrosoc" target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@mycrosoc</a>
+    <a href="https://www.tiktok.com/@mycrosoc_" target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>@mycrosoc_</a>
+    <a href="https://x.com/mycrosoc" target="_blank" rel="noopener"><svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@mycrosoc</a>
+  </div>
   <p>จัดทำโดยนักศึกษาสังคมสงเคราะห์ เพื่อใช้เป็นแนวทางเตรียมความพร้อมในการสอบ ไม่ใช่เอกสารทางการจากมหาวิทยาลัยธรรมศาสตร์หรือสภาวิชาชีพสังคมสงเคราะห์</p>
 </footer>
 
@@ -449,11 +516,10 @@
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
   // ---------- COUNTDOWN ----------
-  function updateCountdown(){
-    const examDate = new Date('2026-09-26T09:00:00+07:00');
-    const diff = examDate - new Date();
-    const d = document.getElementById('cdDays'), h = document.getElementById('cdHours'),
-          m = document.getElementById('cdMins'), s = document.getElementById('cdSecs');
+  function updateCountdown(targetIso, ids){
+    const diff = new Date(targetIso) - new Date();
+    const d = document.getElementById(ids[0]), h = document.getElementById(ids[1]),
+          m = document.getElementById(ids[2]), s = document.getElementById(ids[3]);
     if (diff <= 0){ d.textContent='00'; h.textContent='00'; m.textContent='00'; s.textContent='00'; return; }
     const days = Math.floor(diff/86400000);
     const hours = Math.floor((diff%86400000)/3600000);
@@ -464,43 +530,63 @@
     m.textContent = String(mins).padStart(2,'0');
     s.textContent = String(secs).padStart(2,'0');
   }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  function tickCountdowns(){
+    updateCountdown('2027-03-21T09:00:00+07:00', ['cd1Days','cd1Hours','cd1Mins','cd1Secs']);
+    updateCountdown('2026-09-26T09:00:00+07:00', ['cd2Days','cd2Hours','cd2Mins','cd2Secs']);
+  }
+  tickCountdowns();
+  setInterval(tickCountdowns, 1000);
 
   // ---------- QUIZ ----------
   const quizData = {
     track1: [
-      { q:'บุคคลใดได้รับการยกย่องว่าเป็นผู้บุกเบิกแนวคิด "สังคมสงเคราะห์เฉพาะราย" (Social Casework)?',
-        options:['เจน แอดดัมส์ (Jane Addams)','แมรี ริชมอนด์ (Mary Richmond)','ซิกมันด์ ฟรอยด์ (Sigmund Freud)','เอมิล เดอร์ไคม์ (Émile Durkheim)'],
+      { q:'สวัสดิการบัตรสวัสดิการแห่งรัฐของไทยจัดอยู่ในรูปแบบสวัสดิการสังคมประเภทใดตามหลักวิชาการ?',
+        options:['สวัสดิการถ้วนหน้า','สวัสดิการแบบสงเคราะห์','สวัสดิการแบบประกันสังคม','สวัสดิการแบบช่วยเหลือเกื้อกูลภาคประชาชน','สวัสดิการแบบสมัครใจของชุมชน'],
         correct:1,
-        rationale:'แมรี ริชมอนด์ ได้รับการยกย่องเป็น "มารดาแห่งสังคมสงเคราะห์เฉพาะราย" จากการวางรากฐานวิธีการทำงานเป็นรายบุคคลอย่างเป็นระบบ ส่วนเจน แอดดัมส์เป็นผู้บุกเบิกแนวคิด Settlement House และงานชุมชน' },
-      { q:'วิธีการปฏิบัติงานสังคมสงเคราะห์แบบดั้งเดิม (Traditional Methods) แบ่งออกเป็น 3 วิธีหลัก คือข้อใด?',
-        options:['จิตบำบัด การให้คำปรึกษา และการฟื้นฟู','สังคมสงเคราะห์เฉพาะราย สังคมสงเคราะห์กลุ่มชน และการจัดระเบียบชุมชน','การวิจัย การบริหาร และการกำหนดนโยบาย','การป้องกัน การบำบัด และการพัฒนา'],
-        correct:1,
-        rationale:'3 วิธีการดั้งเดิม ได้แก่ Casework, Group Work และ Community Organization ซึ่งเป็นรากฐานก่อนพัฒนาสู่แนวคิด Generalist Practice ในเวลาต่อมา' },
-      { q:'หลักการ "Client Self-Determination" ตามแนวคิดของ Biestek หมายถึงข้อใด?',
-        options:['นักสังคมสงเคราะห์เป็นผู้ตัดสินใจแทนผู้รับบริการเพื่อความรวดเร็ว','ผู้รับบริการมีสิทธิและเสรีภาพในการตัดสินใจเลือกแนวทางแก้ไขปัญหาของตนเอง','การให้ผู้รับบริการปฏิบัติตามกฎระเบียบขององค์กรอย่างเคร่งครัด','การกำหนดเป้าหมายการช่วยเหลือโดยไม่ต้องปรึกษาผู้รับบริการ'],
-        correct:1,
-        rationale:'เป็น 1 ใน 7 หลักการสัมพันธภาพของ Biestek ที่เน้นสิทธิของผู้รับบริการในการตัดสินใจด้วยตนเอง นักสังคมสงเคราะห์มีบทบาทสนับสนุนข้อมูลและทางเลือก ไม่ใช่ตัดสินใจแทน' }
+        rationale:'บัตรสวัสดิการแห่งรัฐมีการคัดกรองผู้มีสิทธิตามเกณฑ์รายได้และทรัพย์สิน (Means-tested) จึงจัดเป็นสวัสดิการแบบสงเคราะห์ ต่างจากสวัสดิการถ้วนหน้าที่ให้สิทธิทุกคนโดยไม่คัดกรองฐานะ' },
+      { q:'หน่วยงานใดรับผิดชอบสายด่วน 1300 ซึ่งเป็นศูนย์การช่วยเหลือทางสังคมของประเทศไทย?',
+        options:['กระทรวงมหาดไทย','กระทรวงยุติธรรม','สำนักงานตำรวจแห่งชาติ','กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์','กระทรวงแรงงาน'],
+        correct:3,
+        rationale:'สายด่วน 1300 เป็นเบอร์ศูนย์ช่วยเหลือสังคมของกระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์ (พม.) รับแจ้งเหตุความรุนแรงในครอบครัว การทอดทิ้งผู้สูงอายุ และการละเมิดผู้พิการ' },
+      { q:'บัตรสวัสดิการแห่งรัฐของไทยกำหนดเกณฑ์คัดกรองผู้มีสิทธิโดยพิจารณาจากปัจจัยใดเป็นหลัก?',
+        options:['รายได้และทรัพย์สินของผู้สมัครตามเกณฑ์ที่กำหนด','รายได้เฉลี่ยต่อครัวเรือนเทียบกับเส้นความยากจนแห่งชาติเพียงอย่างเดียว โดยไม่พิจารณาทรัพย์สิน','คะแนนความเปราะบางทางสังคมที่ประเมินโดยนักสังคมสงเคราะห์ประจำพื้นที่เป็นรายกรณี','สถานะการจดทะเบียนเป็นแรงงานนอกระบบตามกฎหมายประกันสังคมมาตรา 40','ผลการสำรวจความจำเป็นพื้นฐาน (จปฐ.) ของครัวเรือนในปีล่าสุดเพียงอย่างเดียว'],
+        correct:0,
+        rationale:'เกณฑ์คัดกรองผู้มีสิทธิบัตรสวัสดิการแห่งรัฐพิจารณาทั้งรายได้และทรัพย์สินของผู้สมัครตามเกณฑ์ที่กำหนด ไม่ใช่พิจารณาเฉพาะรายได้อย่างเดียว' },
+      { q:'ตามพระราชบัญญัติวิชาชีพสังคมสงเคราะห์ พ.ศ. 2556 บุคคลที่จะประกอบวิชาชีพสังคมสงเคราะห์รับอนุญาตต้องดำเนินการใด?',
+        options:['ขึ้นทะเบียนกับสภาวิชาชีพสังคมสงเคราะห์','ขึ้นทะเบียนกับกรมพัฒนาสังคมและสวัสดิการ','ขึ้นทะเบียนกับสภาการพยาบาลแห่งประเทศไทย','ขึ้นทะเบียนกับกระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์','ขึ้นทะเบียนกับสำนักงานปลัดกระทรวงสาธารณสุข'],
+        correct:0,
+        rationale:'พ.ร.บ.วิชาชีพสังคมสงเคราะห์ พ.ศ. 2556 กำหนดให้ผู้ประกอบวิชาชีพสังคมสงเคราะห์รับอนุญาตต้องขึ้นทะเบียนกับสภาวิชาชีพสังคมสงเคราะห์ ซึ่งเป็นองค์กรวิชาชีพที่จัดตั้งขึ้นตามกฎหมายฉบับนี้โดยเฉพาะ' },
+      { q:'หากประชาชนพบเห็นเหตุการณ์ความรุนแรงในครอบครัว ผู้สูงอายุถูกทอดทิ้ง หรือผู้พิการถูกละเมิด ควรโทรศัพท์แจ้งศูนย์ช่วยเหลือสังคมของกระทรวง พม. ที่สายด่วนเบอร์ใด?',
+        options:['1300','1669','1330','1506','1111'],
+        correct:0,
+        rationale:'1300 คือสายด่วนศูนย์ช่วยเหลือสังคมของกระทรวง พม. รับแจ้งเหตุความรุนแรงในครอบครัว การทอดทิ้งผู้สูงอายุ และการละเมิดผู้พิการโดยตรง ตลอด 24 ชั่วโมง' }
     ],
     track2: [
-      { q:'พระราชบัญญัติวิชาชีพสังคมสงเคราะห์ พ.ศ. 2556 มีวัตถุประสงค์หลักเพื่อสิ่งใด?',
-        options:['กำหนดอัตราค่าจ้างของนักสังคมสงเคราะห์ในหน่วยงานรัฐ','จัดตั้งกลไกควบคุมมาตรฐานวิชาชีพและออกใบอนุญาตประกอบวิชาชีพสังคมสงเคราะห์','จัดสรรงบประมาณสวัสดิการสังคมให้แก่ประชาชน','กำหนดหลักสูตรการเรียนการสอนของคณะสังคมสงเคราะห์ศาสตร์'],
+      { q:'การอธิบายว่าสถาบันการศึกษาทำหน้าที่ผลิตซ้ำความเหลื่อมล้ำทางชนชั้น สอดคล้องกับแนวคิดของใคร?',
+        options:['Talcott Parsons','Pierre Bourdieu','Max Weber','Bronislaw Malinowski','Herbert Spencer'],
         correct:1,
-        rationale:'กฎหมายฉบับนี้จัดตั้งสภาวิชาชีพสังคมสงเคราะห์ ทำหน้าที่ควบคุมมาตรฐาน จรรยาบรรณ และออกใบอนุญาตให้ผู้ประกอบวิชาชีพสังคมสงเคราะห์รับอนุญาต' },
-      { q:'ข้อใดสอดคล้องกับจรรยาบรรณวิชาชีพมากที่สุด เมื่อนักสังคมสงเคราะห์ได้รับข้อมูลส่วนตัวที่ละเอียดอ่อนจากผู้รับบริการ?',
-        options:['นำไปเล่าให้เพื่อนร่วมงานฟังเพื่อขอความเห็น โดยไม่ระบุชื่อ','รักษาความลับของข้อมูล เว้นแต่มีเหตุจำเป็นตามกฎหมายหรือเพื่อความปลอดภัยของผู้รับบริการ','เก็บไว้เป็นความลับส่วนตัวโดยไม่บันทึกในแฟ้มเคสเลย','เปิดเผยได้หากผู้บังคับบัญชาร้องขอโดยไม่มีเหตุผลประกอบ'],
+        rationale:'Pierre Bourdieu เสนอแนวคิดทุนทางวัฒนธรรมและทฤษฎีการผลิตซ้ำ (Reproduction Theory) อธิบายว่าระบบการศึกษามีส่วนสืบทอดความเหลื่อมล้ำทางชนชั้นผ่านทุนทางวัฒนธรรมที่แต่ละครอบครัวสะสมไว้ไม่เท่ากัน' },
+      { q:'แนวคิดใดสนับสนุนการทำงานกับผู้ใช้บริการโดยมองหาทรัพยากรและศักยภาพที่มีอยู่?',
+        options:['Deficit-based approach','Strengths-based approach','Functionalism','Social Darwinism','Residual welfare'],
         correct:1,
-        rationale:'การรักษาความลับ (Confidentiality) เป็นหลักจรรยาบรรณสำคัญ แต่มีข้อยกเว้นเมื่อจำเป็นตามกฎหมายหรือเพื่อป้องกันอันตรายร้ายแรง ซึ่งต้องบันทึกและดำเนินการอย่างเหมาะสม' },
-      { q:'"กลุ่มเปราะบาง" (Vulnerable Groups) ในบริบทงานสังคมสงเคราะห์ไทย โดยทั่วไปหมายถึงกลุ่มใด?',
-        options:['เฉพาะกลุ่มผู้มีรายได้น้อยเท่านั้น','กลุ่มที่มีความเสี่ยงสูงต่อการถูกละเมิดสิทธิหรือเข้าไม่ถึงสวัสดิการ เช่น เด็ก ผู้สูงอายุ คนพิการ และผู้ประสบความรุนแรง','เฉพาะผู้ป่วยที่รักษาตัวในโรงพยาบาลเท่านั้น','กลุ่มข้าราชการที่รอเกษียณอายุ'],
+        rationale:'Strengths-based approach เน้นมองผู้ใช้บริการผ่านทรัพยากร จุดแข็ง และศักยภาพที่มีอยู่ แทนที่จะมองผ่านปัญหาหรือความบกพร่องแบบ Deficit-based approach' },
+      { q:'การจัดระบบประกันสังคมเพื่อรองรับความเสี่ยงตลอดช่วงชีวิตของรัฐสำหรับประชาชนทุกคน สะท้อนแนวคิดของรัฐแบบใด?',
+        options:['Minimal state','Welfare state','Authoritarian state','Charity state','Night-watchman state'],
         correct:1,
-        rationale:'กลุ่มเปราะบางครอบคลุมบุคคลที่มีข้อจำกัดด้านร่างกาย เศรษฐกิจ สังคม หรือสถานการณ์ ทำให้เสี่ยงต่อการถูกละเมิดสิทธิหรือเข้าไม่ถึงบริการ ครอบคลุมกลุ่มหลากหลาย ไม่จำกัดเฉพาะมิติใดมิติหนึ่ง' }
+        rationale:'Welfare State คือรัฐที่รับผิดชอบจัดสวัสดิการและระบบประกันสังคมครอบคลุมประชาชนทุกคนตลอดช่วงชีวิต ต่างจาก Minimal state หรือ Night-watchman state ที่รัฐมีบทบาทจำกัดเฉพาะความมั่นคงและความสงบเรียบร้อย' },
+      { q:'หลัก Difference Principle ของ John Rawls เน้นสิ่งใด?',
+        options:['ความเสมอภาคของผลลัพธ์ทั้งหมด','เสรีภาพทางเศรษฐกิจ','การเอื้อประโยชน์ต่อผู้เสียเปรียบที่สุด','ประโยชน์รวมของสังคม','การแข่งขันเสรี'],
+        correct:2,
+        rationale:'Difference Principle ของ Rawls ระบุว่าความไม่เท่าเทียมทางสังคมและเศรษฐกิจจะยอมรับได้ก็ต่อเมื่อก่อให้เกิดประโยชน์สูงสุดแก่กลุ่มผู้เสียเปรียบที่สุดในสังคม' },
+      { q:'การทำงานกับชุมชนเพื่อผลักดันนโยบายแก้ปัญหาความยากจน สะท้อนแนวคิดของนักสังคมสงเคราะห์คนใดมากที่สุด?',
+        options:['Mary Richmond','Carl Rogers','Jane Addams','Talcott Parsons','Erikson'],
+        correct:2,
+        rationale:'Jane Addams เป็นผู้บุกเบิกขบวนการ Settlement House และงานชุมชน เน้นการทำงานเชิงนโยบายและการเปลี่ยนแปลงโครงสร้างสังคมเพื่อแก้ปัญหาความยากจน ต่างจาก Mary Richmond ที่เน้นงานสังคมสงเคราะห์เฉพาะราย' }
     ]
   };
 
   let quizState = { track:'track1', index:0, answered:false, correctCount:0 };
-  const letters = ['ก','ข','ค','ง'];
+  const letters = ['ก','ข','ค','ง','จ'];
 
   function switchTrack(track){
     quizState = { track, index:0, answered:false, correctCount:0 };
