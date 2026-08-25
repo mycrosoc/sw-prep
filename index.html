@@ -179,7 +179,8 @@
   .courses{padding:70px 0 96px;background:var(--paper-white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .courses-head{max-width:600px;margin-bottom:48px;}
   .tracks-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
-  .track-card{background:var(--paper);border-radius:16px;padding:0;overflow:hidden;border:1px solid var(--line);}
+  .track-card{background:var(--paper);border-radius:16px;padding:0;overflow:hidden;border:1px solid var(--line);text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease;}
+  .track-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -18px rgba(28,27,26,.3);}
   .track-card .t-head{padding:24px 26px 20px;display:flex;justify-content:space-between;align-items:flex-start;}
   .track-card.t1 .t-head{border-top:6px solid var(--seal);}
   .track-card.t2 .t-head{border-top:6px solid var(--ledger);}
@@ -385,7 +386,7 @@
       <p class="section-sub">เลือกดูรายละเอียดแต่ละสนามสอบ หรือติวควบคู่กันไปทั้งสองสนาม</p>
     </div>
     <div class="tracks-grid">
-      <div class="track-card t1 reveal">
+      <a href="tu-entrance.html" class="track-card t1 reveal">
         <div class="t-head">
           <div><span class="t-num mono">TRACK 01</span><h3>สอบเข้าธรรมศาสตร์</h3></div>
           <span class="t-badge">วิชาเฉพาะ</span>
@@ -398,12 +399,12 @@
           <li>ความเป็นมา คุณค่า บทบาท และจรรยาบรรณวิชาชีพ</li>
           <li>ทฤษฎีและกระบวนทัศน์ทางสังคมศาสตร์</li>
           <li>หลักการ วิธีการ และกระบวนการปฏิบัติงาน</li>
-          <li>มิติศาสตร์ ศิลป์ และความเป็นวิชาชีพ</li>
+          <li>ศาสตร์ ศิลป์ และความเป็นวิชาชีพ</li>
           <li>นโยบายและสวัสดิการสังคม</li>
           <li>สิทธิมนุษยชน กฎหมาย และการวิเคราะห์สถานการณ์สังคมปัจจุบัน</li>
         </ul>
-      </div>
-      <div class="track-card t2 reveal">
+      </a>
+      <a href="swpc.html" class="track-card t2 reveal">
         <div class="t-head">
           <div><span class="t-num mono">TRACK 02</span><h3>ใบประกอบวิชาชีพ</h3></div>
           <span class="t-badge">SWPC</span>
@@ -418,7 +419,7 @@
           <li>การเสริมพลังอำนาจทางสังคมสงเคราะห์</li>
           <li>กฎหมายที่เกี่ยวข้องกับงานสังคมสงเคราะห์</li>
         </ul>
-      </div>
+      </a>
     </div>
   </div>
 </section>
