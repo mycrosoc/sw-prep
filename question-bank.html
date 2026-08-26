@@ -46,7 +46,12 @@
   .bank-hero p{font-size:1rem;color:#4B4841;max-width:480px;margin:0 auto 8px;}
   .free-tag{display:inline-block;font-family:'Space Mono';font-size:.7rem;background:var(--green);color:#fff;padding:4px 12px;border-radius:999px;margin-bottom:16px;}
 
-  .set-list{display:flex;flex-direction:column;gap:14px;padding-bottom:60px;}
+  .cat-block{margin-bottom:36px;}
+  .cat-block:last-child{margin-bottom:0;}
+  .cat-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .cat-icon{font-size:1.5rem;}
+  .cat-header h2{font-size:1.15rem;font-weight:600;}
+  .set-list{display:flex;flex-direction:column;gap:14px;}
   .set-card{display:flex;align-items:center;gap:18px;background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;text-decoration:none;color:inherit;transition:.2s;}
   .set-card.available:hover{transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(28,27,26,.25);border-color:var(--brass);}
   .set-card.locked{opacity:.5;}
@@ -78,53 +83,110 @@
     <span class="free-tag mono">100% ฟรี</span><br>
     <span class="eyebrow">คลังข้อสอบ</span>
     <h1>เลือกชุดข้อสอบที่อยากลองทำ</h1>
-    <p>แบบฝึกหัดฟรีจาก MYCROSOC พร้อมเฉลยละเอียดทุกข้อ ทยอยเปิดชุดใหม่เรื่อยๆ</p>
+    <p>แบบฝึกหัดฟรีจาก MYCROSOC ครอบคลุมทั้งสังคมสงเคราะห์และสังคมศึกษา พร้อมเฉลยละเอียดทุกข้อ ทยอยเปิดชุดใหม่เรื่อยๆ</p>
   </div>
 </header>
 
 <section class="wrapN">
-  <div class="set-list">
-    <a href="question-bank-1.html" class="set-card available">
-      <div class="set-num mono">01</div>
-      <div class="set-info">
-        <h3>ชุดที่ 1</h3>
-        <p>วิชาเฉพาะสังคมสงเคราะห์ · 50 ข้อ</p>
-      </div>
-      <span class="set-status open">เริ่มทำเลย →</span>
-    </a>
-    <div class="set-card locked">
-      <div class="set-num mono">02</div>
-      <div class="set-info">
-        <h3>ชุดที่ 2</h3>
-        <p>เร็วๆ นี้</p>
-      </div>
-      <span class="set-status closed">🔒 ยังไม่เปิด</span>
+
+  <div class="cat-block">
+    <div class="cat-header">
+      <span class="cat-icon">📘</span>
+      <h2>สังคมสงเคราะห์</h2>
     </div>
-    <div class="set-card locked">
-      <div class="set-num mono">03</div>
-      <div class="set-info">
-        <h3>ชุดที่ 3</h3>
-        <p>เร็วๆ นี้</p>
+    <div class="set-list">
+      <a href="question-bank-1.html" class="set-card available">
+        <div class="set-num mono">01</div>
+        <div class="set-info">
+          <h3>ชุดที่ 1</h3>
+          <p>วิชาเฉพาะสังคมสงเคราะห์ · 50 ข้อ</p>
+        </div>
+        <span class="set-status open">เริ่มทำเลย →</span>
+      </a>
+      <div class="set-card locked">
+        <div class="set-num mono">02</div>
+        <div class="set-info">
+          <h3>ชุดที่ 2</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
       </div>
-      <span class="set-status closed">🔒 ยังไม่เปิด</span>
-    </div>
-    <div class="set-card locked">
-      <div class="set-num mono">04</div>
-      <div class="set-info">
-        <h3>ชุดที่ 4</h3>
-        <p>เร็วๆ นี้</p>
+      <div class="set-card locked">
+        <div class="set-num mono">03</div>
+        <div class="set-info">
+          <h3>ชุดที่ 3</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
       </div>
-      <span class="set-status closed">🔒 ยังไม่เปิด</span>
-    </div>
-    <div class="set-card locked">
-      <div class="set-num mono">05</div>
-      <div class="set-info">
-        <h3>ชุดที่ 5</h3>
-        <p>เร็วๆ นี้</p>
+      <div class="set-card locked">
+        <div class="set-num mono">04</div>
+        <div class="set-info">
+          <h3>ชุดที่ 4</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
       </div>
-      <span class="set-status closed">🔒 ยังไม่เปิด</span>
+      <div class="set-card locked">
+        <div class="set-num mono">05</div>
+        <div class="set-info">
+          <h3>ชุดที่ 5</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
+      </div>
     </div>
   </div>
+
+  <div class="cat-block">
+    <div class="cat-header">
+      <span class="cat-icon">📗</span>
+      <h2>สังคมศึกษา</h2>
+    </div>
+    <div class="set-list">
+      <div class="set-card locked">
+        <div class="set-num mono">01</div>
+        <div class="set-info">
+          <h3>ชุดที่ 1</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
+      </div>
+      <div class="set-card locked">
+        <div class="set-num mono">02</div>
+        <div class="set-info">
+          <h3>ชุดที่ 2</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
+      </div>
+      <div class="set-card locked">
+        <div class="set-num mono">03</div>
+        <div class="set-info">
+          <h3>ชุดที่ 3</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
+      </div>
+      <div class="set-card locked">
+        <div class="set-num mono">04</div>
+        <div class="set-info">
+          <h3>ชุดที่ 4</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
+      </div>
+      <div class="set-card locked">
+        <div class="set-num mono">05</div>
+        <div class="set-info">
+          <h3>ชุดที่ 5</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <footer class="site-footer">
