@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#A32638">
+<meta name="description" content="สาระน่ารู้เกี่ยวกับสังคมสงเคราะห์ จาก SW/PREP">
+<title>สาระน่ารู้ — SW/PREP</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C1B1A'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-weight='700' font-size='54' fill='%23A32638' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="สาระน่ารู้ — SW/PREP">
+<meta property="og:description" content="สาระน่ารู้เกี่ยวกับสังคมสงเคราะห์ จาก SW/PREP">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1C1B1A;--paper:#F2EAD8;--paper-white:#FBF8F1;--seal:#A32638;--brass:#B8933F;--line:#D8CFB8;--maxN:760px;--max:1180px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Sarabun',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Chakra Petch',sans-serif;}
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  .wrapN{max-width:var(--maxN);margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper-white);padding:7px 14px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow::before{content:'●';color:var(--seal);font-size:.6rem;}
+
+  .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:.98rem;padding:14px 30px;border-radius:9px;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease,box-shadow .15s ease;}
+  .btn-primary{background:var(--seal);color:var(--paper-white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(163,38,56,.55);}
+  .btn-secondary{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-secondary:hover{transform:translateY(-2px);background:var(--ink);color:var(--paper-white);}
+
+  .nav{position:sticky;top:0;z-index:200;background:rgba(242,234,216,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.3rem;text-decoration:none;}
+  .brand span{color:var(--seal);}
+  .nav-cta{background:var(--ink);color:var(--paper-white);padding:9px 18px;border-radius:999px;font-size:.88rem;text-decoration:none;font-weight:600;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono';font-size:.8rem;color:#6B6759;text-decoration:none;margin-bottom:18px;}
+  .back-link:hover{color:var(--seal);}
+
+  .hero{padding:52px 0 40px;text-align:center;}
+  .hero h1{font-size:clamp(1.9rem,4.2vw,2.7rem);font-weight:600;margin-bottom:12px;}
+  .hero p{font-size:1rem;color:#4B4841;max-width:480px;margin:0 auto;}
+
+  /* ARTICLE CARD LIST — ready for future content */
+  .insights-section{padding:10px 0 70px;}
+  .insight-list{display:flex;flex-direction:column;gap:16px;}
+  .insight-card{display:block;background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:22px 24px;text-decoration:none;color:inherit;transition:.2s;}
+  .insight-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(28,27,26,.25);border-color:var(--brass);}
+  .insight-tag{font-family:'Space Mono';font-size:.68rem;letter-spacing:.05em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px;}
+  .insight-card h3{font-size:1.02rem;margin-bottom:6px;}
+  .insight-card p{font-size:.86rem;color:#5A564E;}
+
+  /* EMPTY STATE */
+  .empty-state{text-align:center;background:var(--paper-white);border:1.5px dashed var(--line);border-radius:16px;padding:48px 24px;}
+  .empty-icon{font-size:2.2rem;margin-bottom:14px;}
+  .empty-state h3{font-size:1.05rem;margin-bottom:8px;}
+  .empty-state p{font-size:.88rem;color:#8A8579;max-width:360px;margin:0 auto;}
+
+  .cta-section{padding:0 0 80px;text-align:center;}
+  .cta-section h2{font-size:1.35rem;margin-bottom:20px;}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
+  .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:8px auto 0;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">SW<span>/</span>PREP</a>
+    <a href="index.html#contact" class="nav-cta">สมัครเรียน</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrapN">
+    <a href="index.html" class="back-link">← กลับหน้าแรก</a>
+    <span class="eyebrow">สาระน่ารู้</span>
+    <h1>ความรู้และเกร็ดน่ารู้ด้านสังคมสงเคราะห์</h1>
+    <p>รวมบทความ ข้อมูล และเกร็ดความรู้เล็กๆ น้อยๆ ที่น่าสนใจสำหรับคนเรียนและสนใจสายสังคมสงเคราะห์</p>
+  </div>
+</header>
+
+<section class="insights-section">
+  <div class="wrapN">
+    <div class="insight-list" id="insightList">
+      <div class="empty-state">
+        <div class="empty-icon">📚</div>
+        <h3>กำลังทยอยเพิ่มเนื้อหา</h3>
+        <p>เร็วๆ นี้จะมีบทความและสาระน่ารู้ทยอยลงในหน้านี้ แวะกลับมาดูใหม่ได้นะ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrapN">
+    <h2 class="display">ระหว่างนี้ลองทำโจทย์ก่อนได้เลย</h2>
+    <div class="cta-actions">
+      <a href="question-bank.html" class="btn-primary">คลังข้อสอบ</a>
+      <a href="index.html#courses" class="btn-secondary">ดูคอร์สเรียน</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="index.html" class="brand">SW<span style="color:var(--seal)">/</span>PREP</a>
+  <p>จัดทำโดยนักศึกษาสังคมสงเคราะห์ เพื่อใช้เป็นแนวทางเตรียมความพร้อมในการสอบ ไม่ใช่เอกสารทางการจากมหาวิทยาลัยธรรมศาสตร์หรือสภาวิชาชีพสังคมสงเคราะห์</p>
+</footer>
+
+</body>
+</html>

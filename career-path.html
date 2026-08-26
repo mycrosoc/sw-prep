@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#A32638">
+<meta name="description" content="เส้นทางการเรียนสังคมสงเคราะห์ 4 ปี และอาชีพที่ทำได้หลังเรียนจบ">
+<title>เส้นทางการเรียนและอาชีพ — SW/PREP</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C1B1A'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-weight='700' font-size='54' fill='%23A32638' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="เส้นทางการเรียนและอาชีพ — SW/PREP">
+<meta property="og:description" content="4 ปีในรั้วสังคมสงเคราะห์ และอาชีพที่ทำได้หลังเรียนจบ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1C1B1A;--paper:#F2EAD8;--paper-white:#FBF8F1;--seal:#A32638;--brass:#B8933F;--line:#D8CFB8;--maxN:760px;--max:1180px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Sarabun',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Chakra Petch',sans-serif;}
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  .wrapN{max-width:var(--maxN);margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper-white);padding:7px 14px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow::before{content:'●';color:var(--seal);font-size:.6rem;}
+  h2.section-title{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:600;margin-bottom:10px;}
+  p.section-sub{color:#514E48;max-width:560px;font-size:.95rem;}
+
+  .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:.98rem;padding:14px 30px;border-radius:9px;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease,box-shadow .15s ease;}
+  .btn-primary{background:var(--seal);color:var(--paper-white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(163,38,56,.55);}
+  .btn-secondary{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-secondary:hover{transform:translateY(-2px);background:var(--ink);color:var(--paper-white);}
+
+  .nav{position:sticky;top:0;z-index:200;background:rgba(242,234,216,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.3rem;text-decoration:none;}
+  .brand span{color:var(--seal);}
+  .nav-cta{background:var(--ink);color:var(--paper-white);padding:9px 18px;border-radius:999px;font-size:.88rem;text-decoration:none;font-weight:600;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono';font-size:.8rem;color:#6B6759;text-decoration:none;margin-bottom:18px;}
+  .back-link:hover{color:var(--seal);}
+
+  .hero{padding:52px 0 44px;text-align:center;}
+  .hero h1{font-size:clamp(1.9rem,4.2vw,2.7rem);font-weight:600;margin-bottom:12px;}
+  .hero p{font-size:1rem;color:#4B4841;max-width:520px;margin:0 auto;}
+
+  /* YEAR TIMELINE */
+  .timeline-section{padding:20px 0 70px;}
+  .timeline{position:relative;padding-left:56px;}
+  .timeline::before{content:'';position:absolute;left:19px;top:6px;bottom:6px;width:2px;background:var(--line);}
+  .tl-item{position:relative;margin-bottom:26px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-num{position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:var(--seal);color:var(--paper-white);display:flex;align-items:center;justify-content:center;font-family:'Space Mono';font-weight:700;font-size:.9rem;flex-shrink:0;}
+  .tl-content{background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
+  .tl-content h3{font-size:1rem;margin-bottom:6px;}
+  .tl-content p{font-size:.88rem;color:#5A564E;}
+  .tl-year{font-family:'Space Mono';font-size:.68rem;color:var(--brass);letter-spacing:.05em;display:block;margin-bottom:4px;}
+
+  /* CAREER GRID */
+  /* 2 PATHS */
+
+  /* CATEGORIZED CAREER LISTS — icon-badge cards */
+  .career-cats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+  .career-cat{background:var(--paper-white);border:1px solid var(--line);border-radius:18px;padding:26px 22px;box-shadow:0 10px 26px -18px rgba(28,27,26,.25);}
+  .career-cat-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:16px;background:rgba(163,38,56,.1);}
+  .career-cat.ledger .career-cat-icon{background:rgba(44,66,88,.1);}
+  .career-cat.brass .career-cat-icon{background:rgba(184,147,63,.14);}
+  .career-cat-label{font-family:'Chakra Petch';font-size:1.02rem;font-weight:600;margin-bottom:14px;display:block;}
+  .career-list{list-style:none;}
+  .career-list li{position:relative;padding-left:22px;margin-bottom:10px;font-size:.87rem;color:#3A3733;line-height:1.5;}
+  .career-list li::before{content:'✓';position:absolute;left:0;top:1px;color:var(--brass);font-weight:700;}
+  @media(max-width:900px){.career-cats-grid{grid-template-columns:1fr;}}
+
+  .career-section{padding:0 0 20px;}
+
+  .note-line{font-size:.82rem;color:#6B6759;text-align:center;max-width:560px;margin:28px auto 0;}
+
+  .cta-section{padding:56px 0 80px;text-align:center;}
+  .cta-section h2{font-size:1.4rem;margin-bottom:20px;}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
+  .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:8px auto 0;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">SW<span>/</span>PREP</a>
+    <a href="index.html#contact" class="nav-cta">สมัครเรียน</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrapN">
+    <a href="index.html" class="back-link">← กลับหน้าแรก</a>
+    <span class="eyebrow">เส้นทางสายอาชีพ</span>
+    <h1>4 ปีในรั้วสังคมสงเคราะห์ แล้วจบมาทำอะไรได้บ้าง</h1>
+    <p>ภาพรวมคร่าวๆ ของการเรียนตลอดหลักสูตร และเส้นทางอาชีพที่เปิดกว้างหลังเรียนจบ สำหรับคนที่กำลังตัดสินใจเข้าคณะนี้</p>
+  </div>
+</header>
+
+<section class="timeline-section">
+  <div class="wrapN">
+    <div style="margin-bottom:28px;">
+      <h2 class="section-title">เส้นทาง 4 ปี</h2>
+      <p class="section-sub">แบ่งเป็นช่วง Pre-fieldwork (ปี 1-2) และ Fieldwork (ปี 3-4)</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-num mono">1</div>
+        <div class="tl-content">
+          <span class="tl-year">ปีที่ 1 · ปูพื้นฐาน</span>
+          <h3>วิชาพื้นฐานสังคมศาสตร์</h3>
+          <p>เรียนสนุกๆ คล้ายคณะอื่น เป็นปีที่เพิ่งเข้ามหาวิทยาลัยและเรียนวิชาพื้นฐานเกี่ยวกับสังคมศาสตร์และพฤติกรรมมนุษย์ เช่น จิตวิทยา สังคมวิทยา มานุษยวิทยา และเศรษฐศาสตร์เบื้องต้น พร้อมวิชาพื้นฐานหลักการสังคมสงเคราะห์ที่ช่วยให้เข้าใจบทบาทของนักสังคมสงเคราะห์ในการช่วยเหลือบุคคล ครอบครัว และชุมชน</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num mono">2</div>
+        <div class="tl-content">
+          <span class="tl-year">ปีที่ 2 · เข้มข้นขึ้น</span>
+          <h3>ทฤษฎีและกระบวนการสังคมสงเคราะห์</h3>
+          <p>เริ่มเรียนลึกขึ้นเกี่ยวกับแนวคิดและทฤษฎี เช่น ทฤษฎีจิตวิเคราะห์ ทฤษฎีเชิงพฤติกรรม ทฤษฎีระบบครอบครัว และกระบวนการสังคมสงเคราะห์ (Social Work Process) ซึ่งเป็นหัวใจสำคัญของงานด้านนี้ เริ่มฝึกทักษะการสัมภาษณ์ ประเมินปัญหา ให้คำปรึกษา และทำแผนช่วยเหลือผู้รับบริการ รวมถึงเรียนสิทธิและกฎหมายคุ้มครองเด็ก ผู้สูงอายุ คนพิการ และผู้ด้อยโอกาส</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num mono">3</div>
+        <div class="tl-content">
+          <span class="tl-year">ปีที่ 3 · ฝึกภาคสนามจริง</span>
+          <h3>ออกฝึกงานกับหน่วยงานจริง</h3>
+          <p>ปีที่ท้าทาย เพราะได้ออกฝึกงานภาคสนามกับหน่วยงานจริง เช่น โรงพยาบาล บ้านพักเด็กและครอบครัว สถานพินิจ หรือองค์กรพัฒนาเอกชน (NGOs) ได้สัมผัสปัญหาสังคมจริงและฝึกใช้ทักษะที่เรียนมา ต้องทำ Case Work (งานรายกรณี) และ Group Work (งานกลุ่ม) พร้อมเรียนรู้การทำงานร่วมกับนักวิชาชีพอื่น เช่น นักจิตวิทยา แพทย์ และนักกฎหมาย</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num mono">4</div>
+        <div class="tl-content">
+          <span class="tl-year">ปีที่ 4 · ฝึกเข้มข้น เตรียมสู่วิชาชีพ</span>
+          <h3>ฝึกงานเข้มข้น + วิจัย + เตรียมสมัครงาน</h3>
+          <p>ฝึกงานแบบเข้มข้นมากขึ้น ใช้เวลาหลายเดือนทำงานกับองค์กรจริง ทำโครงการพัฒนาสังคมและวิจัยประเด็นปัญหาสังคม เช่น ความยากจน ความรุนแรงในครอบครัว หรือการเข้าถึงสวัสดิการของกลุ่มเปราะบาง พร้อมเตรียมตัวสอบใบประกอบวิชาชีพและสมัครงานในสายที่เกี่ยวข้อง</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="career-section">
+  <div class="wrapN">
+    <div style="margin-bottom:22px;">
+      <h2 class="section-title">จบมาทำอาชีพอะไรได้บ้าง</h2>
+      <p class="section-sub">องค์ความรู้จากสังคมสงเคราะห์ครอบคลุมมนุษยสัมพันธ์ การบริหารสวัสดิการ งานชุมชน และการพัฒนาสังคม จึงเลือกเส้นทางได้หลากหลาย</p>
+    </div>
+
+    <div class="career-cats-grid">
+      <div class="career-cat">
+        <div class="career-cat-icon">🏛️</div>
+        <span class="career-cat-label">สายงานภาครัฐ</span>
+        <ul class="career-list">
+          <li>นักสังคมสงเคราะห์ในหน่วยงานรัฐ เช่น กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์</li>
+          <li>นักสังคมสงเคราะห์ในโรงพยาบาล ดูแลด้านจิตสังคมของผู้ป่วยและครอบครัว</li>
+          <li>นักพัฒนาสังคม ทำงานเกี่ยวกับนโยบายด้านสวัสดิการสังคม</li>
+          <li>เจ้าหน้าที่ด้านสิทธิมนุษยชนและการคุ้มครองผู้เปราะบาง</li>
+          <li>นักวิจัยด้านสังคมศาสตร์และนโยบายสังคม</li>
+          <li>อาจารย์และนักวิชาการในมหาวิทยาลัย</li>
+        </ul>
+      </div>
+
+      <div class="career-cat ledger">
+        <div class="career-cat-icon">💼</div>
+        <span class="career-cat-label">สายงานภาคเอกชน</span>
+        <ul class="career-list">
+          <li>นักพัฒนาสังคมในองค์กรพัฒนาเอกชน (NGOs)</li>
+          <li>ที่ปรึกษาทางสังคมในองค์กรธุรกิจที่เน้นความรับผิดชอบต่อสังคม (CSR)</li>
+          <li>ผู้จัดการฝ่ายทรัพยากรบุคคล (HR) ที่เน้นแรงงานสัมพันธ์และสวัสดิการพนักงาน</li>
+          <li>นักวิเคราะห์ข้อมูลทางสังคมเพื่อการพัฒนาชุมชน</li>
+        </ul>
+      </div>
+
+      <div class="career-cat brass">
+        <div class="career-cat-icon">🌟</div>
+        <span class="career-cat-label">สายงานอื่น</span>
+        <ul class="career-list">
+          <li>นักสื่อสารเพื่อสังคม ทำงานสร้างแคมเปญรณรงค์ทางสังคม</li>
+          <li>นักเคลื่อนไหวด้านสิทธิมนุษยชน เรียกร้องความเป็นธรรมในประเด็นต่างๆ</li>
+          <li>นักให้คำปรึกษาด้านสุขภาพจิตและพฤติกรรมมนุษย์</li>
+          <li>นักวิจัยที่ทำงานร่วมกับหน่วยงานภาครัฐและเอกชนในการพัฒนานโยบายที่เป็นธรรม</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note-line">เป็นภาพรวมทั่วไปเพื่อประกอบการตัดสินใจในการเรียนสังคมสงเคราะห์</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrapN">
+    <h2 class="display">พร้อมเริ่มเตรียมตัวแล้วหรือยัง</h2>
+    <div class="cta-actions">
+      <a href="packages.html" class="btn-primary">ดูคอร์สเรียน</a>
+      <a href="index.html#quiz" class="btn-secondary">ลองทำโจทย์</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="index.html" class="brand">SW<span style="color:var(--seal)">/</span>PREP</a>
+  <p>จัดทำโดยนักศึกษาสังคมสงเคราะห์ เพื่อใช้เป็นแนวทางเตรียมความพร้อมในการสอบ ไม่ใช่เอกสารทางการจากมหาวิทยาลัยธรรมศาสตร์หรือสภาวิชาชีพสังคมสงเคราะห์</p>
+</footer>
+
+</body>
+</html>
