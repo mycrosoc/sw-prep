@@ -4,17 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#A32638">
-<meta name="description" content="สาระน่ารู้เกี่ยวกับสังคมสงเคราะห์ จาก SW/PREP">
-<title>สาระน่ารู้ — SW/PREP</title>
+<meta name="description" content="ข่าวสารและอัปเดตจาก SW/PREP — ประชาสัมพันธ์ บทความวิชาการ และคลังทรัพยากรการเรียน">
+<title>ข่าวสาร — SW/PREP</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C1B1A'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-weight='700' font-size='54' fill='%23A32638' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
-<meta property="og:type" content="website">
-<meta property="og:title" content="สาระน่ารู้ — SW/PREP">
-<meta property="og:description" content="สาระน่ารู้เกี่ยวกับสังคมสงเคราะห์ จาก SW/PREP">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#1C1B1A;--paper:#F2EAD8;--paper-white:#FBF8F1;--seal:#A32638;--brass:#B8933F;--line:#D8CFB8;--maxN:760px;--max:1180px;}
+  :root{--ink:#1C1B1A;--paper:#F2EAD8;--paper-white:#FBF8F1;--seal:#A32638;--ledger:#2C4258;--brass:#B8933F;--line:#D8CFB8;--maxN:720px;--max:1180px;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Sarabun',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;}
@@ -40,34 +37,30 @@
   .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono';font-size:.8rem;color:#6B6759;text-decoration:none;margin-bottom:18px;}
   .back-link:hover{color:var(--seal);}
 
-  .hero{padding:52px 0 40px;text-align:center;}
+  .hero{padding:52px 0 32px;text-align:center;}
   .hero h1{font-size:clamp(1.9rem,4.2vw,2.7rem);font-weight:600;margin-bottom:12px;}
   .hero p{font-size:1rem;color:#4B4841;max-width:480px;margin:0 auto;}
 
-  /* ARTICLE CARD LIST — ready for future content */
-  .insights-section{padding:10px 0 70px;}
-  .cat-block{margin-bottom:36px;}
-  .cat-block:last-child{margin-bottom:0;}
-  .cat-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .cat-icon{font-size:1.5rem;}
-  .cat-header h2{font-size:1.15rem;font-weight:600;}
-  .locked-badge{font-family:'Space Mono';font-size:.68rem;letter-spacing:.03em;color:var(--seal);background:rgba(163,38,56,.08);border:1px solid rgba(163,38,56,.25);padding:4px 10px;border-radius:999px;margin-left:auto;}
-  .insight-list{display:flex;flex-direction:column;gap:16px;}
-  .insight-card{display:block;background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:22px 24px;text-decoration:none;color:inherit;transition:.2s;}
-  .insight-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(28,27,26,.25);border-color:var(--brass);}
-  .insight-tag{font-family:'Space Mono';font-size:.68rem;letter-spacing:.05em;color:var(--brass);text-transform:uppercase;display:block;margin-bottom:8px;}
-  .insight-card h3{font-size:1.02rem;margin-bottom:6px;}
-  .insight-card p{font-size:.86rem;color:#5A564E;}
+  .filter-tabs{display:flex;justify-content:center;gap:8px;margin:0 auto 28px;flex-wrap:wrap;}
+  .filter-tab{font-family:'Space Mono';font-size:.7rem;background:var(--paper-white);border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;}
+  .filter-tab.pr{border-color:var(--seal);color:var(--seal);}
+  .filter-tab.article{border-color:var(--ledger);color:var(--ledger);}
+  .filter-tab.resource{border-color:var(--brass);color:var(--brass);}
 
-  /* EMPTY STATE */
+  .news-section{padding:0 0 70px;}
+  .news-list{display:flex;flex-direction:column;gap:14px;}
+  .news-card{display:block;background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;text-decoration:none;color:inherit;}
+  .post-type{display:inline-block;font-family:'Space Mono';font-size:.66rem;letter-spacing:.04em;padding:3px 10px;border-radius:999px;margin-bottom:10px;}
+  .post-type.pr{background:rgba(163,38,56,.1);color:var(--seal);}
+  .post-type.article{background:rgba(44,66,88,.1);color:var(--ledger);}
+  .post-type.resource{background:rgba(184,147,63,.14);color:var(--brass);}
+  .news-card h3{font-size:1rem;margin-bottom:6px;}
+  .news-card p{font-size:.86rem;color:#5A564E;}
+
   .empty-state{text-align:center;background:var(--paper-white);border:1.5px dashed var(--line);border-radius:16px;padding:48px 24px;}
   .empty-icon{font-size:2.2rem;margin-bottom:14px;}
   .empty-state h3{font-size:1.05rem;margin-bottom:8px;}
   .empty-state p{font-size:.88rem;color:#8A8579;max-width:360px;margin:0 auto;}
-
-  .cta-section{padding:0 0 80px;text-align:center;}
-  .cta-section h2{font-size:1.35rem;margin-bottom:20px;}
-  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 
   .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
   .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:8px auto 0;}
@@ -85,53 +78,28 @@
 <header class="hero">
   <div class="wrapN">
     <a href="index.html" class="back-link">← กลับหน้าแรก</a>
-    <span class="eyebrow">สาระน่ารู้</span>
-    <h1>ความรู้และเกร็ดน่ารู้ด้านสังคมสงเคราะห์</h1>
-    <p>รวมบทความ ข้อมูล และเกร็ดความรู้เล็กๆ น้อยๆ ที่น่าสนใจสำหรับคนเรียนและสนใจสายสังคมสงเคราะห์</p>
+    <span class="eyebrow">ข่าวสาร</span>
+    <h1>ข่าวสารและอัปเดต</h1>
+    <p>รวมประชาสัมพันธ์ บทความวิชาการ และทรัพยากรการเรียนใหม่ๆ จาก SW/PREP ไว้ในที่เดียว</p>
   </div>
 </header>
 
-<section class="insights-section">
-  <div class="wrapN">
-
-    <div class="cat-block">
-      <div class="cat-header">
-        <span class="cat-icon">📘</span>
-        <h2>สังคมสงเคราะห์</h2>
-      </div>
-      <div class="insight-list">
-        <div class="empty-state">
-          <div class="empty-icon">📚</div>
-          <h3>กำลังทยอยเพิ่มเนื้อหา</h3>
-          <p>เร็วๆ นี้จะมีบทความและสาระน่ารู้ทยอยลงในหมวดนี้ แวะกลับมาดูใหม่ได้นะ</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="cat-block">
-      <div class="cat-header">
-        <span class="cat-icon">📗</span>
-        <h2>สังคมศึกษา</h2>
-        <span class="locked-badge">🔒 ต้องใช้โค้ด</span>
-      </div>
-      <div class="insight-list">
-        <a href="social-studies.html" class="insight-card">
-          <span class="insight-tag">6 พาร์ทวิชา</span>
-          <h3>เลือกพาร์ทวิชาที่อยากทบทวน</h3>
-          <p>สังคมวิทยา ศาสนา หน้าที่พลเมือง เศรษฐศาสตร์ ประวัติศาสตร์ และภูมิศาสตร์</p>
-        </a>
-      </div>
-    </div>
-
+<section class="wrapN">
+  <div class="filter-tabs">
+    <span class="filter-tab pr mono">● ประชาสัมพันธ์</span>
+    <span class="filter-tab article mono">● บทความวิชาการ</span>
+    <span class="filter-tab resource mono">● คลังทรัพยากร</span>
   </div>
 </section>
 
-<section class="cta-section">
+<section class="news-section">
   <div class="wrapN">
-    <h2 class="display">ระหว่างนี้ลองทำโจทย์ก่อนได้เลย</h2>
-    <div class="cta-actions">
-      <a href="question-bank.html" class="btn-primary">คลังข้อสอบ</a>
-      <a href="index.html#courses" class="btn-secondary">ดูคอร์สเรียน</a>
+    <div class="news-list">
+      <div class="empty-state">
+        <div class="empty-icon">📰</div>
+        <h3>ยังไม่มีข่าวสารตอนนี้</h3>
+        <p>เร็วๆ นี้จะมีประกาศ บทความ และของใหม่ๆ ทยอยอัปเดตในหน้านี้</p>
+      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#A32638">
+<meta name="description" content="โครงสร้างทางสังคม กลุ่มสังคม สถาบันทางสังคม และการจัดระเบียบทางสังคม — บทเรียนสังคมวิทยาพื้นฐาน">
+<title>โครงสร้างทางสังคม — SW/PREP</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C1B1A'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-weight='700' font-size='54' fill='%23A32638' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1C1B1A;--paper:#F2EAD8;--paper-white:#FBF8F1;--seal:#A32638;--ledger:#2C4258;--brass:#B8933F;--line:#D8CFB8;--maxN:760px;--max:1180px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Sarabun',sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Chakra Petch',sans-serif;}
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  .wrapN{max-width:var(--maxN);margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper-white);padding:7px 14px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow::before{content:'●';color:var(--seal);font-size:.6rem;}
+
+  .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:.98rem;padding:14px 30px;border-radius:9px;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease,box-shadow .15s ease;}
+  .btn-primary{background:var(--seal);color:var(--paper-white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(163,38,56,.55);}
+  .btn-secondary{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-secondary:hover{transform:translateY(-2px);background:var(--ink);color:var(--paper-white);}
+
+  .nav{position:sticky;top:0;z-index:200;background:rgba(242,234,216,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.3rem;text-decoration:none;}
+  .brand span{color:var(--seal);}
+  .nav-cta{background:var(--ink);color:var(--paper-white);padding:9px 18px;border-radius:999px;font-size:.88rem;text-decoration:none;font-weight:600;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono';font-size:.8rem;color:#6B6759;text-decoration:none;margin-bottom:18px;}
+  .back-link:hover{color:var(--seal);}
+
+  .hero{padding:52px 0 36px;}
+  .hero h1{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:600;margin-bottom:10px;}
+  .hero p{font-size:.98rem;color:#4B4841;max-width:560px;}
+
+  .lesson-section{padding:10px 0 60px;}
+  .lesson-block{background:var(--paper-white);border:1px solid var(--line);border-radius:16px;padding:26px 26px;margin-bottom:20px;}
+  .lesson-block h2{font-size:1.15rem;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .lesson-block h2::before{content:'';width:6px;height:6px;background:var(--brass);border-radius:50%;flex-shrink:0;}
+  .lesson-block h3{font-size:.98rem;font-weight:600;margin:16px 0 8px;color:var(--seal);}
+  .lesson-block p{font-size:.92rem;color:#3A3733;margin-bottom:10px;}
+  .lesson-list{list-style:none;margin-bottom:10px;}
+  .lesson-list li{position:relative;padding-left:20px;margin-bottom:8px;font-size:.9rem;color:#3A3733;}
+  .lesson-list li::before{content:'—';position:absolute;left:0;top:0;color:var(--brass);}
+  .lesson-list.numbered{counter-reset:ln;}
+  .lesson-list.numbered li{counter-increment:ln;padding-left:24px;}
+  .lesson-list.numbered li::before{content:counter(ln)'.';color:var(--seal);font-weight:700;}
+
+  .callout{background:rgba(184,147,63,.08);border-left:4px solid var(--brass);border-radius:10px;padding:14px 18px;margin:14px 0;font-size:.88rem;}
+  .callout strong{display:block;margin-bottom:4px;font-family:'Chakra Petch';color:var(--brass);font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;}
+
+  .lesson-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.86rem;}
+  .lesson-table th{background:var(--ink);color:var(--paper-white);padding:10px 12px;text-align:left;font-family:'Chakra Petch';font-weight:600;font-size:.82rem;}
+  .lesson-table td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:#3A3733;}
+  .lesson-table tr:nth-child(even){background:var(--paper);}
+
+  .diagram-box{background:var(--ink);color:var(--paper-white);border-radius:14px;padding:22px;text-align:center;margin:16px 0;font-size:.88rem;}
+  .diagram-box .d-main{font-family:'Chakra Petch';font-weight:600;font-size:1.02rem;margin-bottom:10px;}
+  .diagram-box .d-arrow{color:var(--brass);margin:6px 0;}
+  .diagram-box .d-parts{color:#D9D5C9;}
+
+  .cta-section{padding:20px 0 80px;text-align:center;}
+  .cta-section h2{font-size:1.3rem;margin-bottom:20px;}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
+  .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:8px auto 0;}
+
+  .code-gate{padding:70px 24px 90px;max-width:420px;margin:0 auto;text-align:center;}
+  .gate-card{background:var(--paper-white);border:1px solid var(--line);border-radius:18px;padding:36px 28px;}
+  .code-gate h2{font-size:1.3rem;margin-bottom:10px;}
+  .code-gate p{font-size:.9rem;color:#5A564E;margin-bottom:20px;}
+  .gate-input-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .gate-input{flex:1;min-width:160px;padding:12px 16px;border-radius:9px;border:1.5px solid var(--line);font-family:'Space Mono';font-size:1rem;text-align:center;letter-spacing:.05em;background:var(--paper);color:var(--ink);}
+  .gate-input:focus{outline:none;border-color:var(--brass);}
+  .gate-error{color:var(--seal);font-size:.84rem;margin-top:12px;font-weight:600;}
+  .watermark-layer{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;display:flex;flex-wrap:wrap;align-content:flex-start;transform:rotate(-25deg) scale(1.4);overflow:hidden;}
+  .watermark-layer span{font-family:'Space Mono';font-size:.8rem;white-space:nowrap;margin:40px 30px;color:var(--ink);}
+</style>
+</head>
+<body>
+
+<div class="watermark-layer" id="watermarkLayer"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">SW<span>/</span>PREP</a>
+    <a href="index.html#contact" class="nav-cta">สมัครเรียน</a>
+  </div>
+</nav>
+
+<div id="codeGate" class="code-gate">
+  <div class="gate-card">
+    <span class="eyebrow">สมาชิกเท่านั้น</span>
+    <h2>กรอกโค้ดเพื่อเข้าเรียน</h2>
+    <p>บทเรียนหมวดสังคมวิทยาสำหรับผู้เรียนคอร์สเท่านั้น กรอกโค้ดที่ได้รับจาก MYCROSOC</p>
+    <div class="gate-input-row">
+      <input type="text" id="gateCode" class="gate-input" placeholder="กรอกโค้ด" autocomplete="off" autofocus>
+      <button class="btn-primary" onclick="checkGateCode()">ยืนยัน</button>
+    </div>
+    <p id="gateError" class="gate-error" style="display:none;">โค้ดไม่ถูกต้อง ลองอีกครั้ง</p>
+    <a href="sociology.html" class="back-link" style="margin-top:16px;">← กลับสาระน่ารู้</a>
+  </div>
+</div>
+
+<div id="gatedContent" style="display:none;">
+<header class="hero">
+  <div class="wrapN">
+    <a href="sociology.html" class="back-link">← กลับสาระน่ารู้</a>
+    <span class="eyebrow">สังคมวิทยาพื้นฐาน · ตอนที่ 2</span>
+    <h1>โครงสร้างทางสังคม</h1>
+    <p>สังคมทุกสังคมมีระบบความสัมพันธ์ที่เป็นระเบียบแบบแผน — เรียนรู้ 3 องค์ประกอบหลักของโครงสร้างทางสังคม ตั้งแต่กลุ่มสังคม สถาบันทางสังคม ไปจนถึงการจัดระเบียบทางสังคม</p>
+  </div>
+</header>
+
+<section class="lesson-section">
+  <div class="wrapN">
+
+    <div class="lesson-block">
+      <h2>โครงสร้างทางสังคมคืออะไร</h2>
+      <p><strong>โครงสร้างทางสังคม</strong> คือระบบความสัมพันธ์ระหว่างบุคคล กลุ่ม และชนชั้นทั้งหมดที่รวมตัวกันเป็นสังคมอย่างมีระเบียบ กำหนดด้วยสิทธิและหน้าที่ที่มีต่อกัน</p>
+      <p>โครงสร้างทางสังคมประกอบด้วย 3 ส่วนหลัก:</p>
+      <div class="diagram-box">
+        <div class="d-main">โครงสร้างสังคม</div>
+        <div class="d-arrow">↓</div>
+        <div class="d-parts">กลุ่มสังคม · สถาบันทางสังคม · การจัดระเบียบทางสังคม</div>
+      </div>
+    </div>
+
+    <div class="lesson-block">
+      <h2>1. กลุ่มสังคม</h2>
+      <p>คือการรวมตัวกันของคนตั้งแต่ 2 คนขึ้นไปที่มีการติดต่อเกี่ยวข้องกัน มีระยะเวลานานพอที่จะทำให้เกิดความสัมพันธ์กัน โดยสมาชิกของกลุ่มมีความรู้สึกเป็นสมาชิกร่วมกัน</p>
+      <table class="lesson-table">
+        <tr><th>ประเภท</th><th>ลักษณะ</th><th>ตัวอย่าง</th></tr>
+        <tr><td><strong>กลุ่มปฐมภูมิ</strong></td><td>สมาชิกน้อย มีความสัมพันธ์ส่วนตัว ใกล้ชิดสนิทสนม ตอบสนองความต้องการทางด้านจิตใจได้เป็นอย่างดี</td><td>ครอบครัว เครือญาติ เพื่อนสนิท แฟน</td></tr>
+        <tr><td><strong>กลุ่มทุติยภูมิ</strong></td><td>สมาชิกมาก เป็นไปตามระเบียบ ค่อนข้างเป็นทางการ เป็นความสัมพันธ์เฉพาะด้าน</td><td>อาชีพ ชมรม สถานที่ราชการ ลูกจ้าง-นายจ้าง ห้าง ชุมชนเมือง</td></tr>
+      </table>
+      <div class="callout">
+        <strong>ข้อควรระวัง</strong>
+        การรวมตัวกันโดยไม่มีปฏิสัมพันธ์กันและแยกย้ายจากไป ไม่ถือว่าเป็นกลุ่มสังคม เรียกว่า "กลุ่มคน" เช่น คนที่ฟังคอนเสิร์ต คนที่ดูหนังในโรงภาพยนตร์ คนมุงดูอุบัติเหตุ
+      </div>
+    </div>
+
+    <div class="lesson-block">
+      <h2>2. สถาบันทางสังคม</h2>
+      <p>คือแบบแผนพฤติกรรมที่ตั้งขึ้นและปฏิบัติต่อกันมา เป็นชุดของกฎเกณฑ์ที่สังคมกำหนดขึ้นเพื่อตอบสนองความต้องการพื้นฐานต่างๆ ของสังคม สถาบันทางสังคมมีลักษณะเป็นนามธรรม เกิดขึ้นเพื่อตอบสนองความต้องการขั้นพื้นฐานของคนในสังคม และเป็นสิ่งที่เปลี่ยนแปลงได้ยาก</p>
+      <table class="lesson-table">
+        <tr><th>สถาบัน</th><th>หน้าที่และความสำคัญ</th></tr>
+        <tr><td><strong>ครอบครัว</strong></td><td>เป็นสถาบันทางสังคมพื้นฐานแรกสุดและสำคัญที่สุด ผลิตสมาชิกใหม่ อบรมเลี้ยงดู กำหนดสถานภาพให้แก่สมาชิก แบ่งเป็นครอบครัวเดี่ยว (พ่อ แม่ ลูก) และครอบครัวขยาย (มีปู่ย่าตายายหรือญาติคนอื่นอาศัยร่วมด้วย)</td></tr>
+        <tr><td><strong>ศาสนา</strong></td><td>เป็นที่พึ่งทางจิตใจ ควบคุมสมาชิกให้กระทำตามบรรทัดฐานของสังคม ส่งเสริมและถ่ายทอดจริยธรรมและวัฒนธรรม</td></tr>
+        <tr><td><strong>การศึกษา</strong></td><td>ถ่ายทอดความรู้ ความคิด และวัฒนธรรมแก่สมาชิก กำหนดสถานภาพและเลื่อนสถานะทางสังคมให้แก่สมาชิก</td></tr>
+        <tr><td><strong>การเมืองการปกครอง</strong></td><td>เชื่อมโยงความสัมพันธ์ทางอำนาจในสังคม สร้างระเบียบกฎเกณฑ์ทางสังคมให้ความคุ้มครอง รักษาความสงบ และให้ความปลอดภัยแก่สังคม</td></tr>
+        <tr><td><strong>เศรษฐกิจ</strong></td><td>จัดสรรทรัพยากรเพื่อความอยู่รอดของมนุษย์ ตั้งแต่ด้านการผลิต การแลกเปลี่ยน การแจกจ่าย การบริโภค และการบริการ</td></tr>
+      </table>
+    </div>
+
+    <div class="lesson-block">
+      <h2>3. การจัดระเบียบทางสังคม</h2>
+      <p>คือกระบวนการที่ให้สมาชิกในสังคมทำตามระเบียบแบบแผน เกิดขึ้นเพราะสังคมมีคนจำนวนมากและมีความต้องการที่แตกต่างกัน ประกอบด้วย 6 ส่วน:</p>
+
+      <h3>3.1 สถานภาพ</h3>
+      <p>ตำแหน่งที่ได้รับจากการเป็นสมาชิกของสังคม ทำให้เกิดสิทธิหน้าที่ บุคคลหนึ่งสามารถมีได้หลายสถานภาพ แบ่งเป็น</p>
+      <ul class="lesson-list">
+        <li><strong>สถานภาพติดตัว (โดยกำเนิด)</strong> — ได้มาแต่เกิดหรือติดตัวมา เช่น เพศ อายุ เชื้อชาติ เครือญาติ วรรณะ</li>
+        <li><strong>สถานภาพสัมฤทธิ์ (ได้มาภายหลังกำเนิด)</strong> — เรียกอีกอย่างว่าสถานภาพหน้าที่ เช่น อาชีพ การศึกษา การสมรส</li>
+      </ul>
+
+      <h3>3.2 บทบาท</h3>
+      <p>สิ่งที่สังคมคาดหวังให้ปฏิบัติตามสิทธิหน้าที่ตามสถานภาพที่เราเป็น เช่น เป็นครู นักเรียน ตำรวจ ถ้าอยู่คนเดียวบทบาทก็แสดงไม่ได้ ต้องมีคู่แสดงบทบาทด้วย บางทีเรามีสถานภาพในชีวิตจริงหลายแบบ ทำให้บทบาทเริ่มสับสน เรียกว่า <strong>บทบาทขัดกัน (conflict role)</strong> เช่น สามีเป็นตำรวจ ภรรยาเปิดบ่อน หรือพ่อเป็นครูฝ่ายปกครอง ลูกเป็นหัวหน้าแก๊งในโรงเรียนเดียวกัน</p>
+
+      <h3>3.3 การขัดเกลาทางสังคม</h3>
+      <p>ภาษาทางสังคมวิทยาเรียก "สังคมประกิต" เป็นการสอนสมาชิกในสังคม แบ่งได้เป็น 2 แบบ</p>
+      <ul class="lesson-list">
+        <li><strong>การขัดเกลาทางตรง</strong> — เป็นการสั่งสอนโดยตรง เช่น พ่อแม่อบรมลูก ครูสอนนักเรียน</li>
+        <li><strong>การขัดเกลาทางอ้อม</strong> — เป็นการเรียนรู้ด้วยตนเอง หรือจากประสบการณ์ เช่น การรับสื่อ การสังเกตพฤติกรรมคนรอบข้าง</li>
+      </ul>
+
+      <h3>3.4 บรรทัดฐาน</h3>
+      <p>เรียกเป็นภาษาเฉพาะทางสังคมวิทยาว่า "ปทัสถาน" คือแนวทางที่ให้คนในสังคมทำตามในรูปแบบที่วางไว้ มี 3 ประเภท</p>
+      <ul class="lesson-list">
+        <li><strong>วิถีประชา</strong> — ชาวบ้านทำกันจนเป็นความเคยชิน ไม่ทำตามก็ไม่ผิด แค่อาจจะดูแปลก เช่น การไปงานศพแต่งชุดดำ เขียนหนังสือด้วยมือขวา อาบน้ำวันละ 2 ครั้ง</li>
+        <li><strong>จารีต (กฎศีลธรรมจรรยา)</strong> — เป็นแบบแผนที่ทำกันอย่างเคร่งครัด มีเรื่องศาสนา ความถูกผิดเกี่ยวข้องด้วย ไม่ทำตามก็ได้แต่จะรู้สึกผิดในใจ เช่น การอยู่กินก่อนแต่งงานของคู่หนุ่มสาว การลงโทษจากสังคมจะรุนแรงขึ้น เช่น การขับไล่ออกจากสังคม หรือรุมประชาทัณฑ์</li>
+        <li><strong>กฎหมาย</strong> — เป็นกฎเกณฑ์และการควบคุมสังคมอย่างเป็นทางการ หากไม่ทำตามจะได้รับโทษอย่างใดอย่างหนึ่งตามกฎหมาย</li>
+      </ul>
+
+      <h3>3.5 ค่านิยม</h3>
+      <p>เป็นความคิดที่คนส่วนใหญ่มองว่าดี ค่านิยมเลยเป็นตัวกำหนดให้คนอื่นๆ มองตาม หรือไม่ดีก็ได้ เช่น คนไทยมีความกตัญญูให้ผู้ใหญ่ (เป็นค่านิยมที่ดี) เด็กเรียนวิศวะต้องดื่มเหล้าเก่ง (ค่านิยมว่าดีที่สุด แต่ไม่จำเป็นต้องทำตามเลย)</p>
+
+      <h3>3.6 การควบคุมทางสังคม</h3>
+      <p>มีภาษาเฉพาะทางสังคมวิทยาว่า "สิทธานุมัติทางสังคม" เป็นกระบวนการที่ให้สมาชิกของสังคมยอมรับและทำตามบรรทัดฐาน มี 2 แบบ</p>
+      <ul class="lesson-list">
+        <li><strong>การควบคุมโดยการจูงใจ (ทางบวก)</strong> — เช่น การให้รางวัล มอบประกาศนียบัตร</li>
+        <li><strong>การควบคุมโดยการลงโทษ (ทางลบ)</strong> — เช่น การรุบริภาษณ์นินทา การรุมประชาทัณฑ์ การเนรเทศ การจำคุก</li>
+      </ul>
+
+      <div class="diagram-box">
+        <div class="d-main">การจัดระเบียบทางสังคม</div>
+        <div class="d-arrow">↓</div>
+        <div class="d-parts">สถานภาพ + บทบาท + การขัดเกลาทางสังคม + การควบคุมทางสังคม</div>
+      </div>
+
+      <div class="callout">
+        <strong>เสริมความรู้</strong>
+        ความสัมพันธ์ระหว่างสถานภาพกับบทบาทต้องสอดคล้องกันเสมอ สังคมจึงจะมีระเบียบ ถ้าไม่สอดคล้องกันจะเกิดบทบาทขัดกัน เช่น เป็นตำรวจแต่ไปร่วมมือกับโจร
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrapN">
+    <h2 class="display">ไปต่อเรื่องสังคมไทยกันเลย</h2>
+    <div class="cta-actions">
+      <a href="insight-thai-society.html" class="btn-primary">บทที่ 3: สังคมไทย →</a>
+      <a href="sociology.html" class="btn-secondary">กลับสาระน่ารู้</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer class="site-footer">
+  <a href="index.html" class="brand">SW<span style="color:var(--seal)">/</span>PREP</a>
+  <p>จัดทำโดยนักศึกษาสังคมสงเคราะห์ เพื่อใช้เป็นแนวทางเตรียมความพร้อมในการสอบ ไม่ใช่เอกสารทางการจากมหาวิทยาลัยธรรมศาสตร์หรือสภาวิชาชีพสังคมสงเคราะห์</p>
+</footer>
+
+<script>
+const validCodes = ['VMKG-NRJT','K4JT-8X8G','HE9T-8VHE','5DH7-WUUM','4CK8-B2YY','8CK9-MRCY','YA4Q-HCTY','GRUC-PVBP','P5M4-SCDF','HUEB-Q7PT']; // 🔑 10 โค้ดปกติ ใช้ซ้ำได้ไม่จำกัดคน แต่กรอกใหม่ทุกครั้งที่เข้า — แก้ให้เหมือนกันทุกไฟล์ในหมวดสังคมศึกษา
+const limitedCode = 'SSQN-56Q7'; // 🔒 โค้ดพิเศษ ใช้ได้รวม 3 ครั้ง "ต่ออุปกรณ์" (นับรวมทุกบทความในโดเมนเดียวกัน ผ่าน localStorage) — ไม่ใช่ 3 ครั้งรวมทุกคนทุกเครื่อง เพราะเว็บสแตติกไม่มีฐานข้อมูลกลาง คนละเครื่อง/ล้างข้อมูลเบราว์เซอร์ = นับใหม่
+const limitedCodeMax = 3;
+
+function unlockContent(codeUsed){
+  document.getElementById('codeGate').style.display = 'none';
+  document.getElementById('gatedContent').style.display = 'block';
+  paintWatermark(codeUsed);
+}
+
+function paintWatermark(codeUsed){
+  const layer = document.getElementById('watermarkLayer');
+  const label = 'SW/PREP · ' + codeUsed;
+  let html = '';
+  for(let i=0;i<60;i++){ html += '<span>' + label + '</span>'; }
+  layer.innerHTML = html;
+}
+
+function checkGateCode(){
+  const input = document.getElementById('gateCode').value.trim().toUpperCase();
+  const errorEl = document.getElementById('gateError');
+
+  if(validCodes.map(c => c.toUpperCase()).includes(input)){
+    unlockContent(input);
+    return;
+  }
+
+  if(input === limitedCode.toUpperCase()){
+    const used = parseInt(localStorage.getItem('limitedCodeUses') || '0', 10);
+    if(used < limitedCodeMax){
+      localStorage.setItem('limitedCodeUses', used + 1);
+      unlockContent(input);
+      return;
+    }
+    errorEl.textContent = 'โค้ดนี้ถูกใช้ครบจำนวนครั้งแล้วบนเครื่องนี้';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  errorEl.textContent = 'โค้ดไม่ถูกต้อง ลองอีกครั้ง';
+  errorEl.style.display = 'block';
+}
+
+document.getElementById('gateCode').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') checkGateCode();
+});
+</script>
+
+</body>
+</html>

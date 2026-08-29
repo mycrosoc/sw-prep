@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#A32638">
+<meta name="description" content="มนุษย์กับสังคม และวัฒนธรรม — บทเรียนสังคมวิทยาพื้นฐาน">
+<title>มนุษย์กับสังคม และวัฒนธรรม — SW/PREP</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C1B1A'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-weight='700' font-size='54' fill='%23A32638' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1C1B1A;--paper:#F2EAD8;--paper-white:#FBF8F1;--seal:#A32638;--ledger:#2C4258;--brass:#B8933F;--line:#D8CFB8;--maxN:760px;--max:1180px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Sarabun',sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Chakra Petch',sans-serif;}
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  .wrapN{max-width:var(--maxN);margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper-white);padding:7px 14px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow::before{content:'●';color:var(--seal);font-size:.6rem;}
+
+  .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:.98rem;padding:14px 30px;border-radius:9px;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease,box-shadow .15s ease;}
+  .btn-primary{background:var(--seal);color:var(--paper-white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(163,38,56,.55);}
+  .btn-secondary{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-secondary:hover{transform:translateY(-2px);background:var(--ink);color:var(--paper-white);}
+
+  .nav{position:sticky;top:0;z-index:200;background:rgba(242,234,216,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.3rem;text-decoration:none;}
+  .brand span{color:var(--seal);}
+  .nav-cta{background:var(--ink);color:var(--paper-white);padding:9px 18px;border-radius:999px;font-size:.88rem;text-decoration:none;font-weight:600;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono';font-size:.8rem;color:#6B6759;text-decoration:none;margin-bottom:18px;}
+  .back-link:hover{color:var(--seal);}
+
+  .hero{padding:52px 0 36px;}
+  .hero h1{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:600;margin-bottom:10px;}
+  .hero p{font-size:.98rem;color:#4B4841;max-width:560px;}
+
+  .lesson-section{padding:10px 0 60px;}
+  .lesson-block{background:var(--paper-white);border:1px solid var(--line);border-radius:16px;padding:26px 26px;margin-bottom:20px;}
+  .lesson-block h2{font-size:1.15rem;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .lesson-block h2::before{content:'';width:6px;height:6px;background:var(--brass);border-radius:50%;flex-shrink:0;}
+  .lesson-block h3{font-size:.98rem;font-weight:600;margin:16px 0 8px;color:var(--seal);}
+  .lesson-block p{font-size:.92rem;color:#3A3733;margin-bottom:10px;}
+  .lesson-list{list-style:none;margin-bottom:10px;}
+  .lesson-list li{position:relative;padding-left:20px;margin-bottom:8px;font-size:.9rem;color:#3A3733;}
+  .lesson-list li::before{content:'—';position:absolute;left:0;top:0;color:var(--brass);}
+  .lesson-list.numbered{counter-reset:ln;}
+  .lesson-list.numbered li{counter-increment:ln;padding-left:24px;}
+  .lesson-list.numbered li::before{content:counter(ln)'.';color:var(--seal);font-weight:700;}
+
+  .acc-item{cursor:pointer;}
+  .acc-head{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .acc-icon{font-family:'Space Mono';color:var(--brass);font-weight:700;flex-shrink:0;transition:transform .2s ease;}
+  .acc-item.open .acc-icon{transform:rotate(45deg);}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .25s ease;color:#5A564E;}
+  .acc-item.open .acc-body{max-height:160px;margin-top:6px;}
+
+  .callout{background:rgba(184,147,63,.08);border-left:4px solid var(--brass);border-radius:10px;padding:14px 18px;margin:14px 0;font-size:.88rem;}
+  .callout strong{display:block;margin-bottom:4px;font-family:'Chakra Petch';color:var(--brass);font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;}
+
+  .lesson-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.86rem;}
+  .lesson-table th{background:var(--ink);color:var(--paper-white);padding:10px 12px;text-align:left;font-family:'Chakra Petch';font-weight:600;font-size:.82rem;}
+  .lesson-table td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:#3A3733;}
+  .lesson-table tr:nth-child(even){background:var(--paper);}
+
+  .quote-block{text-align:center;font-family:'Chakra Petch';font-size:1rem;font-style:normal;padding:20px;background:var(--ink);color:var(--paper-white);border-radius:14px;margin:16px 0;}
+  .quote-block span{display:block;font-family:'Space Mono';font-size:.7rem;color:var(--brass);margin-top:8px;}
+
+  .cta-section{padding:20px 0 80px;text-align:center;}
+  .cta-section h2{font-size:1.3rem;margin-bottom:20px;}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
+  .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:8px auto 0;}
+
+  .code-gate{padding:70px 24px 90px;max-width:420px;margin:0 auto;text-align:center;}
+  .gate-card{background:var(--paper-white);border:1px solid var(--line);border-radius:18px;padding:36px 28px;}
+  .code-gate h2{font-size:1.3rem;margin-bottom:10px;}
+  .code-gate p{font-size:.9rem;color:#5A564E;margin-bottom:20px;}
+  .gate-input-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .gate-input{flex:1;min-width:160px;padding:12px 16px;border-radius:9px;border:1.5px solid var(--line);font-family:'Space Mono';font-size:1rem;text-align:center;letter-spacing:.05em;background:var(--paper);color:var(--ink);}
+  .gate-input:focus{outline:none;border-color:var(--brass);}
+  .gate-error{color:var(--seal);font-size:.84rem;margin-top:12px;font-weight:600;}
+  .watermark-layer{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;display:flex;flex-wrap:wrap;align-content:flex-start;transform:rotate(-25deg) scale(1.4);overflow:hidden;}
+  .watermark-layer span{font-family:'Space Mono';font-size:.8rem;white-space:nowrap;margin:40px 30px;color:var(--ink);}
+</style>
+</head>
+<body>
+
+<div class="watermark-layer" id="watermarkLayer"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">SW<span>/</span>PREP</a>
+    <a href="index.html#contact" class="nav-cta">สมัครเรียน</a>
+  </div>
+</nav>
+
+<div id="codeGate" class="code-gate">
+  <div class="gate-card">
+    <span class="eyebrow">สมาชิกเท่านั้น</span>
+    <h2>กรอกโค้ดเพื่อเข้าเรียน</h2>
+    <p>บทเรียนหมวดสังคมวิทยาสำหรับผู้เรียนคอร์สเท่านั้น กรอกโค้ดที่ได้รับจาก MYCROSOC</p>
+    <div class="gate-input-row">
+      <input type="text" id="gateCode" class="gate-input" placeholder="กรอกโค้ด" autocomplete="off" autofocus>
+      <button class="btn-primary" onclick="checkGateCode()">ยืนยัน</button>
+    </div>
+    <p id="gateError" class="gate-error" style="display:none;">โค้ดไม่ถูกต้อง ลองอีกครั้ง</p>
+    <a href="sociology.html" class="back-link" style="margin-top:16px;">← กลับสาระน่ารู้</a>
+  </div>
+</div>
+
+<div id="gatedContent" style="display:none;">
+<header class="hero">
+  <div class="wrapN">
+    <a href="sociology.html" class="back-link">← กลับสาระน่ารู้</a>
+    <span class="eyebrow">สังคมวิทยาพื้นฐาน · ตอนที่ 1</span>
+    <h1>มนุษย์กับสังคม และวัฒนธรรม</h1>
+    <p>ทำความเข้าใจว่าทำไมมนุษย์ต้องอยู่ร่วมกันเป็นสังคม และวัฒนธรรมคืออะไร — พื้นฐานที่ต้องแม่นก่อนไปเรียนเรื่องโครงสร้างสังคมและสังคมไทย</p>
+  </div>
+</header>
+
+<section class="lesson-section">
+  <div class="wrapN">
+
+    <div class="lesson-block">
+      <h2>ทำไมมนุษย์ต้องอยู่ร่วมกัน</h2>
+      <p>มนุษย์อยู่รวมกันเป็นสังคมเพื่อตอบสนองความจำเป็น 4 ด้าน:</p>
+      <p style="font-size:.82rem;color:#8A8579;margin-bottom:10px;">แตะแต่ละด้านเพื่อดูรายละเอียด</p>
+      <ul class="lesson-list numbered">
+        <li class="acc-item"><div class="acc-head" onclick="this.parentElement.classList.toggle('open')"><strong>ด้านชีวภาพ</strong><span class="acc-icon">+</span></div><div class="acc-body">ความต้องการปัจจัยพื้นฐาน เช่น อาหาร น้ำ เครื่องนุ่งห่ม ยารักษาโรค ที่อยู่อาศัย</div></li>
+        <li class="acc-item"><div class="acc-head" onclick="this.parentElement.classList.toggle('open')"><strong>ด้านกายภาพ</strong><span class="acc-icon">+</span></div><div class="acc-body">ความต้องการเครื่องมือเครื่องใช้ในการดำรงชีวิต</div></li>
+        <li class="acc-item"><div class="acc-head" onclick="this.parentElement.classList.toggle('open')"><strong>ด้านสังคม</strong><span class="acc-icon">+</span></div><div class="acc-body">ความต้องการสร้างความสัมพันธ์ ติดต่อสื่อสาร แลกเปลี่ยนกัน</div></li>
+        <li class="acc-item"><div class="acc-head" onclick="this.parentElement.classList.toggle('open')"><strong>ด้านจิตใจ</strong><span class="acc-icon">+</span></div><div class="acc-body">ความต้องการความรัก การเป็นที่ยอมรับ การได้รับความเคารพนับถือ</div></li>
+      </ul>
+      <div class="callout">
+        <strong>เสริมความรู้</strong>
+        อริสโตเติล นักปราชญ์ชาวกรีกโบราณ กล่าวไว้ว่า <strong>"มนุษย์เป็นสัตว์สังคม" (social animal)</strong> เพราะมนุษย์มีธรรมชาติที่ต้องอยู่ร่วมกัน ไม่สามารถแยกตัวไปอยู่ตามลำพังได้ และยังกล่าวอีกว่า <strong>"มนุษย์เป็นสัตว์การเมือง" (political animal)</strong> ซึ่งเป็นที่มาของแนวคิดเรื่องรัฐและการเมืองการปกครองในการศึกษารัฐศาสตร์
+      </div>
+    </div>
+
+    <div class="lesson-block">
+      <h2>มนุษย์ต่างจากสัตว์อื่นอย่างไร</h2>
+      <p>สัตว์โลกหลายชนิดอยู่รวมกันเป็นหมู่คณะเช่นเดียวกับมนุษย์ แต่เกณฑ์ที่ใช้แบ่งแยกมนุษย์กับสัตว์โลกคือ <strong>ความสามารถในการสร้างและใช้สัญลักษณ์</strong> (สิ่งที่มนุษย์กำหนดขึ้นใช้แทนความหมายของสิ่งใดสิ่งหนึ่ง เช่น ภาษา กิริยาท่าทาง)</p>
+      <table class="lesson-table">
+        <tr><th>สัตว์โลก</th><th>มนุษย์</th></tr>
+        <tr><td>ใช้สัญชาตญาณกำหนดพฤติกรรม</td><td>ใช้การเรียนรู้กำหนดพฤติกรรม</td></tr>
+        <tr><td>ตอบสนองสิ่งเร้าโดยอัตโนมัติ</td><td>รู้จักใช้และสร้างสัญลักษณ์</td></tr>
+        <tr><td>ตอบสนองสิ่งเร้าตามพันธุกรรม</td><td>ต้องอยู่ร่วมกันเพื่อพึ่งพาอาศัยกัน</td></tr>
+        <tr><td>มีการปรับตัวต่อสภาพแวดล้อม</td><td>มีสมองขนาดใหญ่กว่าสัตว์เมื่อเทียบกับขนาดตัวและน้ำหนักร่างกาย</td></tr>
+      </table>
+    </div>
+
+    <div class="lesson-block">
+      <h2>นิยามพื้นฐาน</h2>
+      <p><strong>สังคม (Society)</strong> คือการอยู่ร่วมกันของมนุษย์ตั้งแต่สองคนขึ้นไป และต้องมีการกระทำระหว่างกัน</p>
+      <p><strong>โครงสร้างทางสังคม</strong> คือระบบความสัมพันธ์ระหว่างสมาชิกในสังคม</p>
+      <p><strong>วัฒนธรรม (Culture)</strong> คือแบบแผนการดำเนินชีวิตของมนุษย์ที่ถูกสร้างขึ้นมาในแต่ละสังคม เพื่อยึดโยงสมาชิกของสังคมเข้าด้วยกัน</p>
+      <h3>ลักษณะเด่นของวัฒนธรรม</h3>
+      <ul class="lesson-list numbered">
+        <li>เป็นสิ่งที่มนุษย์สร้างขึ้นเท่านั้น</li>
+        <li>เกิดจากการเรียนรู้ (ถ้าเป็นเรื่องสัญชาตญาณจะเป็นเรื่องของสัตว์)</li>
+        <li>เป็นมรดกของสังคม ถ่ายทอดผ่านกระบวนการขัดเกลาทางสังคม</li>
+        <li>สามารถเปลี่ยนแปลงได้ และสูญหายไปเลยก็ได้ ยังถ่ายทอดไปยังรุ่นอื่นได้อีกด้วย</li>
+        <li>วัฒนธรรมแต่ละสังคมมีความแตกต่างกัน</li>
+        <li>เป็นวิถีชีวิต (way of life) ของคนในสังคมนั้นๆ</li>
+      </ul>
+      <p style="font-size:.82rem;color:#8A8579;">หมายเหตุ: วัฒนธรรมไม่ได้หมายถึงสิ่งที่ดีงามเท่านั้น แต่หมายถึงแบบแผนการดำเนินชีวิตทั้งหมดของคนในสังคม</p>
+    </div>
+
+    <div class="lesson-block">
+      <h2>ประเภทของวัฒนธรรม</h2>
+      <p>วัฒนธรรมแบ่งได้เป็น 2 ประเภทใหญ่ คือ วัฒนธรรมที่เป็นวัตถุ และวัฒนธรรมที่ไม่ใช่วัตถุ</p>
+      <table class="lesson-table">
+        <tr><th>ประเภท</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr>
+        <tr><td><strong>วัตถุธรรม</strong></td><td>วัฒนธรรมที่เป็นวัตถุ จับต้องได้</td><td>ปัจจัย 4 (อาหาร น้ำ เครื่องนุ่งห่ม ยารักษาโรค ที่อยู่อาศัย)</td></tr>
+        <tr><td><strong>สหธรรม</strong></td><td>วัฒนธรรมทางสังคม อยู่ในรูปแบบมารยาทและประเพณี</td><td>การไหว้ การทักทาย ประเพณีต่างๆ</td></tr>
+        <tr><td><strong>คติธรรม</strong></td><td>วัฒนธรรมทางความคิด อยู่ในรูปแบบคติสอนใจ ความเชื่อ</td><td>คำสอนทางศาสนา สุภาษิต</td></tr>
+        <tr><td><strong>เนติธรรม</strong></td><td>วัฒนธรรมทางกฎหมาย อยู่ในรูปแบบกฎ ระเบียบ ข้อตกลง</td><td>กฎหมาย ระเบียบสังคม</td></tr>
+      </table>
+      <h3>แบ่งตามขอบเขตการใช้</h3>
+      <ul class="lesson-list">
+        <li><strong>วัฒนธรรมหลัก</strong> — เป็นวัฒนธรรมที่กระทำกันในกลุ่มคนส่วนใหญ่ คนทั้งประเทศเข้ากระทำกัน เช่น การนับถือพุทธศาสนา ภาษาไทย</li>
+        <li><strong>วัฒนธรรมย่อยหรือรอง</strong> — กระทำกันในกลุ่มคนส่วนน้อย อาจทำเฉพาะท้องถิ่นหรือกระทำกันเฉพาะกลุ่ม เช่น วัฒนธรรมแต่ละภูมิภาค</li>
+      </ul>
+    </div>
+
+    <div class="lesson-block">
+      <h2>แนวคิดเรื่องความสัมพันธ์ทางวัฒนธรรม</h2>
+      <p>เมื่อวัฒนธรรมของแต่ละสังคมมาปะทะสัมพันธ์กัน จะเกิดปรากฏการณ์ต่างๆ ดังนี้</p>
+      <table class="lesson-table">
+        <tr><th>แนวคิด</th><th>ความหมาย</th></tr>
+        <tr><td>การมีวัฒนธรรมร่วมกัน</td><td>สังคมในภูมิภาคเดียวกันมีรากทางวัฒนธรรมร่วมกัน</td></tr>
+        <tr><td>การหยิบยืมทางวัฒนธรรม</td><td>หยิบเอาวัฒนธรรมหนึ่งมาใช้ในอีกวัฒนธรรมหนึ่ง</td></tr>
+        <tr><td>การกลืนทางวัฒนธรรม</td><td>วัฒนธรรมหนึ่งสูญหายไปจากการเข้าแทนที่ของอีกวัฒนธรรมหนึ่ง</td></tr>
+        <tr><td>ความขัดแย้งทางวัฒนธรรม</td><td>วัฒนธรรมที่ขัดแย้งกัน มักมีที่มาจากศาสนาหรือเชื้อชาติ</td></tr>
+        <tr><td>การแพร่กระจายทางวัฒนธรรม</td><td>การกระจายตัวของวัฒนธรรมจากพื้นที่หนึ่งไปยังพื้นที่อื่น</td></tr>
+        <tr><td>ความล้าหลังทางวัฒนธรรม</td><td>เกิดจากวัฒนธรรมนั้นปรับตัวไม่ทัน</td></tr>
+        <tr><td>ความผสมผสานทางวัฒนธรรม</td><td>สังคมหนึ่งรับเอาวัฒนธรรมจากอีกสังคมหนึ่งเข้ามาผสมกับวัฒนธรรมตน</td></tr>
+      </table>
+      <div class="callout">
+        <strong>เสริมความรู้</strong>
+        ผู้บัญญัติคำศัพท์ "วัฒนธรรม" ในภาษาไทย คือ พระเจ้าวรวงศ์เธอ พระองค์เจ้าวรรณไวทยากร กรมหมื่นนราธิปพงศ์ประพันธ์ หรือ พระองค์วรรณฯ
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrapN">
+    <h2 class="display">ไปต่อเรื่องโครงสร้างทางสังคมกันเลย</h2>
+    <div class="cta-actions">
+      <a href="insight-structure.html" class="btn-primary">บทที่ 2: โครงสร้างทางสังคม →</a>
+      <a href="sociology.html" class="btn-secondary">กลับสาระน่ารู้</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer class="site-footer">
+  <a href="index.html" class="brand">SW<span style="color:var(--seal)">/</span>PREP</a>
+  <p>จัดทำโดยนักศึกษาสังคมสงเคราะห์ เพื่อใช้เป็นแนวทางเตรียมความพร้อมในการสอบ ไม่ใช่เอกสารทางการจากมหาวิทยาลัยธรรมศาสตร์หรือสภาวิชาชีพสังคมสงเคราะห์</p>
+</footer>
+
+<script>
+const validCodes = ['VMKG-NRJT','K4JT-8X8G','HE9T-8VHE','5DH7-WUUM','4CK8-B2YY','8CK9-MRCY','YA4Q-HCTY','GRUC-PVBP','P5M4-SCDF','HUEB-Q7PT']; // 🔑 10 โค้ดปกติ ใช้ซ้ำได้ไม่จำกัดคน แต่กรอกใหม่ทุกครั้งที่เข้า — แก้ให้เหมือนกันทุกไฟล์ในหมวดสังคมศึกษา
+const limitedCode = 'SSQN-56Q7'; // 🔒 โค้ดพิเศษ ใช้ได้รวม 3 ครั้ง "ต่ออุปกรณ์" (นับรวมทุกบทความในโดเมนเดียวกัน ผ่าน localStorage) — ไม่ใช่ 3 ครั้งรวมทุกคนทุกเครื่อง เพราะเว็บสแตติกไม่มีฐานข้อมูลกลาง คนละเครื่อง/ล้างข้อมูลเบราว์เซอร์ = นับใหม่
+const limitedCodeMax = 3;
+
+function unlockContent(codeUsed){
+  document.getElementById('codeGate').style.display = 'none';
+  document.getElementById('gatedContent').style.display = 'block';
+  paintWatermark(codeUsed);
+}
+
+function paintWatermark(codeUsed){
+  const layer = document.getElementById('watermarkLayer');
+  const label = 'SW/PREP · ' + codeUsed;
+  let html = '';
+  for(let i=0;i<60;i++){ html += '<span>' + label + '</span>'; }
+  layer.innerHTML = html;
+}
+
+function checkGateCode(){
+  const input = document.getElementById('gateCode').value.trim().toUpperCase();
+  const errorEl = document.getElementById('gateError');
+
+  if(validCodes.map(c => c.toUpperCase()).includes(input)){
+    unlockContent(input);
+    return;
+  }
+
+  if(input === limitedCode.toUpperCase()){
+    const used = parseInt(localStorage.getItem('limitedCodeUses') || '0', 10);
+    if(used < limitedCodeMax){
+      localStorage.setItem('limitedCodeUses', used + 1);
+      unlockContent(input);
+      return;
+    }
+    errorEl.textContent = 'โค้ดนี้ถูกใช้ครบจำนวนครั้งแล้วบนเครื่องนี้';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  errorEl.textContent = 'โค้ดไม่ถูกต้อง ลองอีกครั้ง';
+  errorEl.style.display = 'block';
+}
+
+document.getElementById('gateCode').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') checkGateCode();
+});
+</script>
+
+</body>
+</html>

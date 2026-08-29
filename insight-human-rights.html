@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#A32638">
+<meta name="description" content="สิทธิมนุษยชน ที่มา หลักการ และองค์กรสิทธิมนุษยชนระหว่างประเทศ — บทเรียนสังคมวิทยาพื้นฐาน">
+<title>สิทธิมนุษยชน — SW/PREP</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C1B1A'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-weight='700' font-size='54' fill='%23A32638' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1C1B1A;--paper:#F2EAD8;--paper-white:#FBF8F1;--seal:#A32638;--ledger:#2C4258;--brass:#B8933F;--line:#D8CFB8;--maxN:760px;--max:1180px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Sarabun',sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Chakra Petch',sans-serif;}
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  .wrapN{max-width:var(--maxN);margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper-white);padding:7px 14px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow::before{content:'●';color:var(--seal);font-size:.6rem;}
+
+  .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:.98rem;padding:14px 30px;border-radius:9px;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease,box-shadow .15s ease;}
+  .btn-primary{background:var(--seal);color:var(--paper-white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px rgba(163,38,56,.55);}
+  .btn-secondary{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-secondary:hover{transform:translateY(-2px);background:var(--ink);color:var(--paper-white);}
+
+  .nav{position:sticky;top:0;z-index:200;background:rgba(242,234,216,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.3rem;text-decoration:none;}
+  .brand span{color:var(--seal);}
+  .nav-cta{background:var(--ink);color:var(--paper-white);padding:9px 18px;border-radius:999px;font-size:.88rem;text-decoration:none;font-weight:600;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono';font-size:.8rem;color:#6B6759;text-decoration:none;margin-bottom:18px;}
+  .back-link:hover{color:var(--seal);}
+
+  .hero{padding:52px 0 36px;}
+  .hero h1{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:600;margin-bottom:10px;}
+  .hero p{font-size:.98rem;color:#4B4841;max-width:560px;}
+
+  .lesson-section{padding:10px 0 60px;}
+  .lesson-block{background:var(--paper-white);border:1px solid var(--line);border-radius:16px;padding:26px 26px;margin-bottom:20px;}
+  .lesson-block h2{font-size:1.15rem;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .lesson-block h2::before{content:'';width:6px;height:6px;background:var(--brass);border-radius:50%;flex-shrink:0;}
+  .lesson-block h3{font-size:.98rem;font-weight:600;margin:16px 0 8px;color:var(--seal);}
+  .lesson-block p{font-size:.92rem;color:#3A3733;margin-bottom:10px;}
+  .lesson-list{list-style:none;margin-bottom:10px;}
+  .lesson-list li{position:relative;padding-left:20px;margin-bottom:8px;font-size:.9rem;color:#3A3733;}
+  .lesson-list li::before{content:'—';position:absolute;left:0;top:0;color:var(--brass);}
+
+  .callout{background:rgba(184,147,63,.08);border-left:4px solid var(--brass);border-radius:10px;padding:14px 18px;margin:14px 0;font-size:.88rem;}
+  .callout strong{display:block;margin-bottom:4px;font-family:'Chakra Petch';color:var(--brass);font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;}
+
+  .lesson-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.84rem;}
+  .lesson-table th{background:var(--ink);color:var(--paper-white);padding:9px 10px;text-align:left;font-family:'Chakra Petch';font-weight:600;font-size:.8rem;}
+  .lesson-table td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;color:#3A3733;}
+  .lesson-table tr:nth-child(even){background:var(--paper);}
+  .table-scroll{overflow-x:auto;}
+
+  .timeline-mini{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--ink);color:var(--paper-white);border-radius:14px;padding:20px;margin:16px 0;font-family:'Space Mono';font-size:.78rem;}
+  .timeline-mini .tm-step{flex:1;min-width:140px;text-align:center;}
+  .timeline-mini .tm-arrow{color:var(--brass);}
+
+  .cta-section{padding:20px 0 80px;text-align:center;}
+  .cta-section h2{font-size:1.3rem;margin-bottom:20px;}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
+  .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:8px auto 0;}
+
+  .code-gate{padding:70px 24px 90px;max-width:420px;margin:0 auto;text-align:center;}
+  .gate-card{background:var(--paper-white);border:1px solid var(--line);border-radius:18px;padding:36px 28px;}
+  .code-gate h2{font-size:1.3rem;margin-bottom:10px;}
+  .code-gate p{font-size:.9rem;color:#5A564E;margin-bottom:20px;}
+  .gate-input-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .gate-input{flex:1;min-width:160px;padding:12px 16px;border-radius:9px;border:1.5px solid var(--line);font-family:'Space Mono';font-size:1rem;text-align:center;letter-spacing:.05em;background:var(--paper);color:var(--ink);}
+  .gate-input:focus{outline:none;border-color:var(--brass);}
+  .gate-error{color:var(--seal);font-size:.84rem;margin-top:12px;font-weight:600;}
+  .watermark-layer{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;display:flex;flex-wrap:wrap;align-content:flex-start;transform:rotate(-25deg) scale(1.4);overflow:hidden;}
+  .watermark-layer span{font-family:'Space Mono';font-size:.8rem;white-space:nowrap;margin:40px 30px;color:var(--ink);}
+</style>
+</head>
+<body>
+
+<div class="watermark-layer" id="watermarkLayer"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">SW<span>/</span>PREP</a>
+    <a href="index.html#contact" class="nav-cta">สมัครเรียน</a>
+  </div>
+</nav>
+
+<div id="codeGate" class="code-gate">
+  <div class="gate-card">
+    <span class="eyebrow">สมาชิกเท่านั้น</span>
+    <h2>กรอกโค้ดเพื่อเข้าเรียน</h2>
+    <p>บทเรียนหมวดสังคมวิทยาสำหรับผู้เรียนคอร์สเท่านั้น กรอกโค้ดที่ได้รับจาก MYCROSOC</p>
+    <div class="gate-input-row">
+      <input type="text" id="gateCode" class="gate-input" placeholder="กรอกโค้ด" autocomplete="off" autofocus>
+      <button class="btn-primary" onclick="checkGateCode()">ยืนยัน</button>
+    </div>
+    <p id="gateError" class="gate-error" style="display:none;">โค้ดไม่ถูกต้อง ลองอีกครั้ง</p>
+    <a href="sociology.html" class="back-link" style="margin-top:16px;">← กลับสาระน่ารู้</a>
+  </div>
+</div>
+
+<div id="gatedContent" style="display:none;">
+<header class="hero">
+  <div class="wrapN">
+    <a href="sociology.html" class="back-link">← กลับสาระน่ารู้</a>
+    <span class="eyebrow">สังคมวิทยาพื้นฐาน · ตอนที่ 4</span>
+    <h1>สิทธิมนุษยชน</h1>
+    <p>ความหมาย ที่มา และหลักการสำคัญของสิทธิมนุษยชน พร้อมองค์กรระหว่างประเทศที่ทำงานด้านนี้ — เชื่อมโยงโดยตรงกับหลักการทำงานสังคมสงเคราะห์</p>
+  </div>
+</header>
+
+<section class="lesson-section">
+  <div class="wrapN">
+
+    <div class="lesson-block">
+      <h2>สิทธิมนุษยชนคืออะไร</h2>
+      <p><strong>สิทธิมนุษยชน</strong> หมายถึง ศักดิ์ศรีความเป็นมนุษย์ เคารพต่อคนอื่น สนับสนุนความเท่าเทียมกันทางเพศ เชื้อชาติ และศาสนา</p>
+      <h3>ประเด็นด้านสิทธิมนุษยชนที่พบบ่อย</h3>
+      <ul class="lesson-list">
+        <li>การฆ่าล้างเผ่าพันธุ์</li>
+        <li>การกีดกันทางศาสนา ชาติพันธุ์ สีผิว</li>
+        <li>การแสดงความคิดเห็นทางการเมือง</li>
+        <li>การถูกคุมขัง การทำร้ายร่างกาย</li>
+        <li>การบังคับใช้แรงงาน</li>
+      </ul>
+      <div class="callout">
+        <strong>เสริมความรู้</strong>
+        ตัวอย่างขบวนการเคลื่อนไหวด้านสิทธิมนุษยชนในยุคปัจจุบันที่รู้จักกันทั่วโลก คือ "Black Lives Matter" (BLM) ซึ่งเป็นการเรียกร้องความเท่าเทียมและต่อต้านการเลือกปฏิบัติทางเชื้อชาติต่อคนผิวสี
+      </div>
+    </div>
+
+    <div class="lesson-block">
+      <h2>ที่มาของแนวคิดสิทธิมนุษยชน</h2>
+      <div class="timeline-mini">
+        <div class="tm-step">คำประกาศสิทธิพลเมือง<br>การปฏิวัติฝรั่งเศส</div>
+        <div class="tm-arrow">→</div>
+        <div class="tm-step">ปฏิญญาสากลว่าด้วยสิทธิมนุษยชน<br>แห่งสหประชาชาติ (10 ธ.ค. 1948)</div>
+      </div>
+      <p>แนวคิดสิทธิมนุษยชนมีที่มาจาก<strong>คำประกาศสิทธิพลเมืองของการปฏิวัติฝรั่งเศส</strong> ต่อมาสมาชิกใหม่แห่งประชาชาติได้มีมติรับรองและประกาศใช้<strong>ปฏิญญาสากลว่าด้วยสิทธิมนุษยชนแห่งสหประชาชาติ</strong> เมื่อวันที่ 10 ธันวาคม ค.ศ. 1948 จึงถือให้วันที่ 10 ธันวาคมของทุกปีเป็น<strong>วันสิทธิมนุษยชนสากล</strong></p>
+      <h3>หลักการสำคัญของปฏิญญาสากลว่าด้วยสิทธิมนุษยชน</h3>
+      <ul class="lesson-list">
+        <li>มนุษย์ทั้งปวงเกิดมามีอิสระและเสมอภาคกันในศักดิ์ศรีและสิทธิ ต่างมีเหตุผลและมโนธรรม และควรปฏิบัติต่อกันด้วยจิตวิญญาณแห่งภราดรภาพ</li>
+        <li>สิทธิมนุษยชนเป็นทั้งค่านิยม หลักการ ข้อตกลง ชุดคุณค่าเดียวกัน เพื่อให้แต่ละประเทศนำไปปฏิบัติตาม</li>
+        <li><strong>ไม่สามารถโอนสิทธิให้กันได้</strong> ในศักดิ์ศรีและสิทธิ ต่างเหมือนผลและมโนธรรม</li>
+        <li>ยังไม่ได้มีศักดิ์และสิทธิเทียบเท่ากับกฎหมายของแต่ละประเทศ และไม่ได้เป็นกฎหมายสากลที่ทุกประเทศยึดถือใช้ในลักษณะเดียวกัน</li>
+      </ul>
+    </div>
+
+    <div class="lesson-block">
+      <h2>องค์กรที่เกี่ยวข้องกับสิทธิมนุษยชนระหว่างประเทศ</h2>
+      <div class="table-scroll">
+        <table class="lesson-table">
+          <tr><th>องค์กร</th><th>ก่อตั้ง</th><th>บทบาท</th></tr>
+          <tr><td><strong>คณะกรรมาธิการสิทธิมนุษยชนแห่งสหประชาชาติ (UNCHR)</strong></td><td>พ.ศ. 2489-2549</td><td>เดิมทำหน้าที่ด้านสิทธิมนุษยชนของสหประชาชาติ (ปัจจุบันถูกแทนที่โดย UNHRC)</td></tr>
+          <tr><td><strong>คณะมนตรีสิทธิมนุษยชนแห่งสหประชาชาติ (UNHRC)</strong></td><td>ตั้งขึ้นแทน UNCHR</td><td>กำกับดูแลและติดตามการละเมิดสิทธิมนุษยชนทั่วโลก</td></tr>
+          <tr><td><strong>กองทุนเพื่อเด็กแห่งสหประชาชาติ (UNICEF)</strong></td><td>—</td><td>ช่วยเหลือด้านการพัฒนาเด็กและคุ้มครองสิทธิเด็กทั่วโลก</td></tr>
+          <tr><td><strong>คณะกรรมการกาชาดระหว่างประเทศ (ICRC)</strong></td><td>—</td><td>ให้ความช่วยเหลือด้านมนุษยธรรมในภาวะสงครามและความขัดแย้ง</td></tr>
+          <tr><td><strong>พันธมิตรต่อต้านการค้ามนุษย์ผู้หญิง (GAATW)</strong></td><td>—</td><td>ต่อต้านการค้ามนุษย์ โดยเฉพาะผู้หญิงและเด็ก</td></tr>
+          <tr><td><strong>องค์กรนิรโทษกรรมสากล (Amnesty International)</strong></td><td>—</td><td>รณรงค์และเผยแพร่ข้อมูลด้านสิทธิมนุษยชนทั่วโลก</td></tr>
+        </table>
+      </div>
+      <div class="callout">
+        <strong>เชื่อมโยงกับงานสังคมสงเคราะห์</strong>
+        หลักการสิทธิมนุษยชนเป็นรากฐานสำคัญของจรรยาบรรณวิชาชีพสังคมสงเคราะห์ โดยเฉพาะหลักการเคารพสิทธิ ศักดิ์ศรี และคุณค่าความเป็นมนุษย์ของผู้รับบริการ ซึ่งเป็นเนื้อหาที่ออกสอบทั้งในวิชาเฉพาะสังคมสงเคราะห์และ SWPC
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrapN">
+    <h2 class="display">ทบทวนจบแล้ว ลองทำโจทย์ดูเลย</h2>
+    <div class="cta-actions">
+      <a href="question-bank.html" class="btn-primary">ไปคลังข้อสอบ</a>
+      <a href="sociology.html" class="btn-secondary">กลับสาระน่ารู้</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer class="site-footer">
+  <a href="index.html" class="brand">SW<span style="color:var(--seal)">/</span>PREP</a>
+  <p>จัดทำโดยนักศึกษาสังคมสงเคราะห์ เพื่อใช้เป็นแนวทางเตรียมความพร้อมในการสอบ ไม่ใช่เอกสารทางการจากมหาวิทยาลัยธรรมศาสตร์หรือสภาวิชาชีพสังคมสงเคราะห์</p>
+</footer>
+
+<script>
+const validCodes = ['VMKG-NRJT','K4JT-8X8G','HE9T-8VHE','5DH7-WUUM','4CK8-B2YY','8CK9-MRCY','YA4Q-HCTY','GRUC-PVBP','P5M4-SCDF','HUEB-Q7PT']; // 🔑 10 โค้ดปกติ ใช้ซ้ำได้ไม่จำกัดคน แต่กรอกใหม่ทุกครั้งที่เข้า — แก้ให้เหมือนกันทุกไฟล์ในหมวดสังคมศึกษา
+const limitedCode = 'SSQN-56Q7'; // 🔒 โค้ดพิเศษ ใช้ได้รวม 3 ครั้ง "ต่ออุปกรณ์" (นับรวมทุกบทความในโดเมนเดียวกัน ผ่าน localStorage) — ไม่ใช่ 3 ครั้งรวมทุกคนทุกเครื่อง เพราะเว็บสแตติกไม่มีฐานข้อมูลกลาง คนละเครื่อง/ล้างข้อมูลเบราว์เซอร์ = นับใหม่
+const limitedCodeMax = 3;
+
+function unlockContent(codeUsed){
+  document.getElementById('codeGate').style.display = 'none';
+  document.getElementById('gatedContent').style.display = 'block';
+  paintWatermark(codeUsed);
+}
+
+function paintWatermark(codeUsed){
+  const layer = document.getElementById('watermarkLayer');
+  const label = 'SW/PREP · ' + codeUsed;
+  let html = '';
+  for(let i=0;i<60;i++){ html += '<span>' + label + '</span>'; }
+  layer.innerHTML = html;
+}
+
+function checkGateCode(){
+  const input = document.getElementById('gateCode').value.trim().toUpperCase();
+  const errorEl = document.getElementById('gateError');
+
+  if(validCodes.map(c => c.toUpperCase()).includes(input)){
+    unlockContent(input);
+    return;
+  }
+
+  if(input === limitedCode.toUpperCase()){
+    const used = parseInt(localStorage.getItem('limitedCodeUses') || '0', 10);
+    if(used < limitedCodeMax){
+      localStorage.setItem('limitedCodeUses', used + 1);
+      unlockContent(input);
+      return;
+    }
+    errorEl.textContent = 'โค้ดนี้ถูกใช้ครบจำนวนครั้งแล้วบนเครื่องนี้';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  errorEl.textContent = 'โค้ดไม่ถูกต้อง ลองอีกครั้ง';
+  errorEl.style.display = 'block';
+}
+
+document.getElementById('gateCode').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') checkGateCode();
+});
+</script>
+
+</body>
+</html>
