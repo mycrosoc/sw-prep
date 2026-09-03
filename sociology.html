@@ -52,6 +52,19 @@
 
   .cta-section{padding:0 0 80px;text-align:center;}
   .cta-section h2{font-size:1.35rem;margin-bottom:20px;}
+
+  .set-list{display:flex;flex-direction:column;gap:14px;}
+  .set-card{display:flex;align-items:center;gap:18px;background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;text-decoration:none;color:inherit;transition:.2s;text-align:left;}
+  .set-card.available:hover{transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(28,27,26,.25);border-color:var(--brass);}
+  .set-card.locked{opacity:.5;}
+  .set-num{font-family:'Chakra Petch';font-size:1.7rem;font-weight:700;color:var(--line);flex-shrink:0;width:42px;text-align:center;}
+  .set-card.available .set-num{color:var(--seal);}
+  .set-info{flex:1;min-width:0;}
+  .set-info h3{font-size:1.02rem;margin-bottom:2px;}
+  .set-info p{font-size:.82rem;color:#8A8579;}
+  .set-status{font-family:'Space Mono';font-size:.72rem;white-space:nowrap;flex-shrink:0;}
+  .set-status.open{color:var(--seal);font-weight:700;}
+  .set-status.closed{color:#8A8579;}
   .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 
   .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
@@ -106,10 +119,32 @@
 
 <section class="cta-section">
   <div class="wrapN">
-    <h2 class="display">ระหว่างนี้ลองทำโจทย์ก่อนได้เลย</h2>
-    <div class="cta-actions">
-      <a href="question-bank.html" class="btn-primary">คลังข้อสอบ</a>
-      <a href="index.html#courses" class="btn-secondary">ดูคอร์สเรียน</a>
+    <h2 class="display">ทดสอบความรู้</h2>
+    <div class="set-list">
+      <a href="qbank-sociology-1.html" class="set-card available">
+        <div class="set-num mono">01</div>
+        <div class="set-info">
+          <h3>ชุดที่ 1</h3>
+          <p>มนุษย์ สังคม วัฒนธรรม และโครงสร้างทางสังคม · 50 ข้อ</p>
+        </div>
+        <span class="set-status open">เริ่มทำเลย →</span>
+      </a>
+      <a href="qbank-sociology-2.html" class="set-card available">
+        <div class="set-num mono">02</div>
+        <div class="set-info">
+          <h3>ชุดที่ 2</h3>
+          <p>มนุษย์ สังคม วัฒนธรรม และโครงสร้างทางสังคม · 50 ข้อ</p>
+        </div>
+        <span class="set-status open">เริ่มทำเลย →</span>
+      </a>
+      <a href="qbank-sociology-3.html" class="set-card locked">
+        <div class="set-num mono">03</div>
+        <div class="set-info">
+          <h3>ชุดที่ 3</h3>
+          <p>เร็วๆ นี้</p>
+        </div>
+        <span class="set-status closed">🔒 ยังไม่เปิด</span>
+      </a>
     </div>
   </div>
 </section>
