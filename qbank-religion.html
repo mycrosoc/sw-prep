@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#A32638">
+<meta name="description" content="คลังข้อสอบฟรี ศาสนา ศีลธรรม จริยธรรม จาก MYCROSOC">
+<title>ศาสนา ศีลธรรม จริยธรรม — SW/PREP</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C1B1A'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-weight='700' font-size='54' fill='%23A32638' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1C1B1A;--paper:#F2EAD8;--paper-white:#FBF8F1;--seal:#A32638;--brass:#B8933F;--line:#D8CFB8;--green:#2E6B3E;--maxN:640px;--max:1180px;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Sarabun',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;}
+  h1,h2,.display{font-family:'Chakra Petch',sans-serif;}
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  .wrapN{max-width:var(--maxN);margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper-white);padding:7px 14px;border-radius:999px;margin-bottom:20px;}
+  .eyebrow::before{content:'●';color:var(--seal);font-size:.6rem;}
+
+  .nav{position:sticky;top:0;z-index:200;background:rgba(242,234,216,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.3rem;text-decoration:none;}
+  .brand span{color:var(--seal);}
+  .nav-cta{background:var(--ink);color:var(--paper-white);padding:9px 18px;border-radius:999px;font-size:.88rem;text-decoration:none;font-weight:600;}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono';font-size:.8rem;color:#6B6759;text-decoration:none;margin-bottom:18px;}
+  .back-link:hover{color:var(--seal);}
+
+  .bank-hero{padding:52px 0 40px;text-align:center;}
+  .bank-hero h1{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:600;margin-bottom:12px;}
+  .bank-hero p{font-size:1rem;color:#4B4841;max-width:480px;margin:0 auto 8px;}
+  .free-tag{display:inline-block;font-family:'Space Mono';font-size:.7rem;background:var(--green);color:#fff;padding:4px 12px;border-radius:999px;margin-bottom:16px;}
+
+  .set-list{display:flex;flex-direction:column;gap:14px;}
+  .set-card{display:flex;align-items:center;gap:18px;background:var(--paper-white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;text-decoration:none;color:inherit;transition:.2s;}
+  .set-card.available:hover{transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(28,27,26,.25);border-color:var(--brass);}
+  .set-card.locked{opacity:.5;}
+  .set-num{font-family:'Chakra Petch';font-size:1.7rem;font-weight:700;color:var(--line);flex-shrink:0;width:42px;text-align:center;}
+  .set-card.available .set-num{color:var(--seal);}
+  .set-info{flex:1;min-width:0;}
+  .set-info h3{font-size:1.02rem;margin-bottom:2px;}
+  .set-info p{font-size:.82rem;color:#8A8579;}
+  .set-status{font-family:'Space Mono';font-size:.72rem;white-space:nowrap;flex-shrink:0;}
+  .set-status.open{color:var(--seal);font-weight:700;}
+  .set-status.closed{color:#8A8579;}
+
+  .site-footer{padding:36px 0;text-align:center;border-top:1px solid var(--line);}
+  .site-footer p{font-size:.78rem;color:#8A8579;max-width:520px;margin:8px auto 0;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">SW<span>/</span>PREP</a>
+    <a href="index.html#contact" class="nav-cta">สมัครเรียน</a>
+  </div>
+</nav>
+
+<header class="bank-hero">
+  <div class="wrapN">
+    <a href="question-bank.html" class="back-link">← กลับคลังข้อสอบ</a>
+    <span class="free-tag mono">100% ฟรี</span><br>
+    <span class="eyebrow">คลังข้อสอบ · สังคมศึกษา</span>
+    <h1>ศาสนา ศีลธรรม จริยธรรม</h1>
+    <p>แบบฝึกหัดฟรีจาก MYCROSOC หัวข้อศาสนา ศีลธรรม จริยธรรม พร้อมเฉลยละเอียดทุกข้อ ทยอยเปิดชุดใหม่เรื่อยๆ</p>
+  </div>
+</header>
+
+<section class="wrapN">
+  <div class="set-list">
+    <a href="qbank-religion-1.html" class="set-card locked">
+      <div class="set-num mono">01</div>
+      <div class="set-info">
+        <h3>ชุดที่ 1</h3>
+        <p>เร็วๆ นี้</p>
+      </div>
+      <span class="set-status closed">🔒 ยังไม่เปิด</span>
+    </a>
+    <a href="qbank-religion-2.html" class="set-card locked">
+      <div class="set-num mono">02</div>
+      <div class="set-info">
+        <h3>ชุดที่ 2</h3>
+        <p>เร็วๆ นี้</p>
+      </div>
+      <span class="set-status closed">🔒 ยังไม่เปิด</span>
+    </a>
+    <a href="qbank-religion-3.html" class="set-card locked">
+      <div class="set-num mono">03</div>
+      <div class="set-info">
+        <h3>ชุดที่ 3</h3>
+        <p>เร็วๆ นี้</p>
+      </div>
+      <span class="set-status closed">🔒 ยังไม่เปิด</span>
+    </a>
+    <a href="qbank-religion-4.html" class="set-card locked">
+      <div class="set-num mono">04</div>
+      <div class="set-info">
+        <h3>ชุดที่ 4</h3>
+        <p>เร็วๆ นี้</p>
+      </div>
+      <span class="set-status closed">🔒 ยังไม่เปิด</span>
+    </a>
+    <a href="qbank-religion-5.html" class="set-card locked">
+      <div class="set-num mono">05</div>
+      <div class="set-info">
+        <h3>ชุดที่ 5</h3>
+        <p>เร็วๆ นี้</p>
+      </div>
+      <span class="set-status closed">🔒 ยังไม่เปิด</span>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <a href="index.html" class="brand">SW<span style="color:var(--seal)">/</span>PREP</a>
+  <p>จัดทำโดยนักศึกษาสังคมสงเคราะห์ เพื่อใช้เป็นแนวทางเตรียมความพร้อมในการสอบ ไม่ใช่เอกสารทางการจากมหาวิทยาลัยธรรมศาสตร์หรือสภาวิชาชีพสังคมสงเคราะห์</p>
+</footer>
+
+</body>
+</html>
